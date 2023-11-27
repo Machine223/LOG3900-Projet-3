@@ -1,0 +1,147 @@
+.showPrimaryColor {
+    padding: 10px;
+    min-width: 0 !important;
+    width: 24px;
+    height: 24px;
+    box-sizing: border-box;
+    padding: 0 !important;
+}
+
+.temporaryColor,
+.colorCanvas {
+    border: solid 1px #bdbdbd;
+}
+
+.dropdown {
+    position: absolute;
+    z-index: 2;
+    width: auto;
+    display: grid;
+}
+
+#colorCanvas {
+    width: min-content;
+    margin-bottom: 10px;
+    margin: auto;
+}
+
+#manualValues {
+    display: grid;
+    grid-template-columns: repeat(3, min-content);
+    margin-top: 10px;
+    align-items: center;
+    gap: 20px;
+    justify-self: center;
+}
+
+.manualValuesForm {
+    display: grid;
+    grid-template-rows: auto 20px;
+}
+
+.colorField {
+    width: 60px;
+    height: 45px;
+}
+
+button:hover,
+.usedColors:hover {
+    cursor: pointer;
+}
+
+#usedColorContainer {
+    display: grid;
+    width: min-content;
+    box-sizing: border-box;
+    gap: 8px;
+    grid-template-columns: repeat(5, 24px);
+    grid-template-rows: 24px;
+}
+
+.usedColors {
+    display: block;
+    min-width: 0 !important;
+    padding: 0 !important;
+    width: 24px;
+    height: 24px;
+}
+
+.backgroundTemp {
+    background-color: #fff;
+    border-radius: 6px;
+    width: 100px;
+    height: 100px;
+}
+
+.background-button {
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 6px;
+    width: 24px;
+    height: 24px;
+}
+
+.temporaryColor {
+    background-color: #fff;
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+button:disabled {
+    background-color: #eee;
+    color: #aaa;
+    cursor: auto;
+}
+
+.errorMessage {
+    color: #ff5722;
+    width: 220px;
+    margin: auto;
+}
+
+#opacitySlider {
+    display: grid;
+    grid-template-columns: auto auto 35px;
+    align-items: center;
+    width: min-content;
+    margin: auto;
+    height: 30px;
+    gap: 5px;
+    margin-top: -15px;
+}
+
+#tempColor {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    gap: 5px;
+    width: min-content;
+    margin: 20px auto 0px auto;
+}
+
+.quickSelectContainer {
+    display: grid;
+    width: fit-content;
+    gap: 15px;
+}
+
+.customContainer {
+    display: grid;
+    grid-template-columns: auto 150px;
+}
+
+.dropdownTitle {
+    font-size: 15px;
+    text-transform: capitalize;
+}
+
+.backToPreset {
+    cursor: pointer;
+    position: absolute;
+}
+
+.recentlyUsedTitle {
+    padding-top: 10px;
+}

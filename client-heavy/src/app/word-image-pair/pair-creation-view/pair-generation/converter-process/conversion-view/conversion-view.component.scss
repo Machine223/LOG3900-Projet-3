@@ -1,0 +1,60 @@
+#conversionResultAndOption {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    justify-items: center;
+}
+
+#conversionOptions {
+    display: grid;
+    height: fit-content;
+    width: 100%;
+    grid-template-columns: 100%;
+    grid-template-rows: 80px 80px 80px;
+    justify-items: center;
+    align-items: center;
+    row-gap: 20px;
+}
+
+#conversionViewContainer {
+    display: grid;
+    width: 100%;
+    height: 800px;
+    justify-items: center;
+    align-items: center;
+}
+
+.conversionParametersName {
+    padding: 0px;
+    height: fit-content;
+    margin: 0px;
+}
+
+.conversionParameter {
+    box-sizing: border-box;
+}
+
+.conversionOptionGroup {
+    height: fit-content;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-rows: 50% 50%;
+}
+
+.conversionSlider {
+    width: 45%;
+}
+
+#colorConversionOptions {
+    display: grid;
+    width: 50%;
+    grid-template-columns: 50% 50%;
+    justify-items: center;
+}
+
+#conversionDrawingSurface {
+    border: solid black 1px;
+}

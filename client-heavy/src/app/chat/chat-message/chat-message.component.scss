@@ -1,0 +1,75 @@
+.ownMessageContainer {
+    width: 100%;
+    max-width: 100%;
+    display: grid;
+    grid-template-rows: min-content 15px;
+    justify-items: end;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.ownMessage {
+    box-sizing: border-box;
+    color: white;
+    padding: 10px;
+    border-radius: 20px 20px 0px 20px;
+    word-break: break-word;
+    text-align: left;
+    white-space: break-spaces;
+}
+
+.timestamp {
+    font-size: 12px;
+}
+
+.otherMessageContainer {
+    width: 100%;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 50px auto;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+app-avatar {
+    align-self: end;
+}
+
+.otherMessageAndInfoContainer {
+    display: grid;
+    width: max-content;
+    max-width: 100%;
+    grid-template-rows: min-content 20px;
+}
+
+.otherMessage {
+    width: fit-content;
+    max-width: 100%;
+    box-sizing: border-box;
+    color: black;
+    padding: 10px;
+    border-radius: 20px 20px 20px 0px;
+    word-break: break-word;
+    text-align: left;
+    background-color: lightgrey;
+    white-space: break-spaces;
+}
+
+.otherInfoContainer {
+    display: grid;
+    grid-template-columns: auto 4px auto;
+    align-items: center;
+    width: fit-content;
+}
+
+.author {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+app-avatar {
+    width: 40px;
+    height: 40px;
+}

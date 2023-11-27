@@ -1,0 +1,12 @@
+<svg:g #shape>
+    <svg:g *ngIf="data.isVisible">
+        <svg:rect
+            [attr.x]="data.perimeter.upperLeftCorner.x"
+            [attr.y]="data.perimeter.upperLeftCorner.y"
+            [attr.width]="data.perimeter.width"
+            [attr.height]="data.perimeter.height"
+            fill="white"
+            stroke="black"
+        />
+    </svg:g>
+</svg:g>

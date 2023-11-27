@@ -1,0 +1,36 @@
+#button {
+    box-sizing: border-box;
+    min-width: 0;
+    width: 32px;
+    height: 32px;
+    min-width: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#buttonImage {
+    width: 20px;
+    height: 20px;
+    user-zoom: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+button:hover:not(.disabledButton) {
+    cursor: pointer;
+}
+
+.disabledButton {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.disabledButton:hover {
+    opacity: 0.3;
+    cursor: not-allowed;
+}

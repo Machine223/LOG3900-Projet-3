@@ -1,0 +1,12 @@
+<div class="attribute-container">
+    <span class="slider-label">Width</span>
+    <mat-slider
+        #sideLengthInput
+        min="1"
+        max="200"
+        step="1"
+        value="{{ eraserTool.sideLength }}"
+        (input)="changeSideLength(sideLengthInput.value)"
+    ></mat-slider>
+    {{ eraserTool.sideLength }} px
+</div>

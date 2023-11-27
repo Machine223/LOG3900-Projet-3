@@ -1,0 +1,21 @@
+<svg:g #shape (click)="onClick($event)" (contextmenu)="onClick($event)" (mousedown)="onMouseDown($event)">
+    <svg:g *ngIf="data.isVisible">
+        <svg:circle
+            *ngIf="data.isCircleShown"
+            [attr.cx]="data.circle.cx"
+            [attr.cy]="data.circle.cy"
+            [attr.r]="data.circle.r"
+            [attr.fill]="data.primaryColor"
+            [attr.opacity]="data.primaryOpacity"
+        />
+        <svg:path
+            [attr.d]="data.points"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            fill="none"
+            [attr.stroke-width]="data.strokeWidth"
+            [attr.stroke]="data.primaryColor"
+            [attr.stroke-opacity]="data.primaryOpacity"
+        />
+    </svg:g>
+</svg:g>

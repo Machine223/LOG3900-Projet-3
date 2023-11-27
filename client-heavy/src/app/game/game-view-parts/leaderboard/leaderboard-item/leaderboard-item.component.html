@@ -1,0 +1,13 @@
+<div class="guessAnimation" [@goodGuess]="isGoodGuess ? 'event' : 'calm'"></div>
+<div class="guessAnimation" [@badGuess]="isBadGuess ? 'event' : 'calm'"></div>
+<div class="row" [ngClass]="{ 'is-self': isSelf }">
+    <div class="crayon">
+        <mat-icon *ngIf="game.currentDrawer === user" class="primary-color">create</mat-icon>
+    </div>
+    <app-avatar [user]="user"></app-avatar>
+    <div class="name">{{ user }}</div>
+    <div class="score" *ngIf="!isVirtual">{{ score }}</div>
+    <div class="score" *ngIf="isVirtual">
+        <mat-icon class="virtual-icon">android</mat-icon>
+    </div>
+</div>

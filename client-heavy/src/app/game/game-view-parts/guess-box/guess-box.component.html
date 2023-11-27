@@ -1,0 +1,11 @@
+<mat-form-field id="guessBox">
+    <mat-label>Answer</mat-label>
+    <input
+        #composer
+        [disabled]="game.hasFoundAnswer"
+        matInput
+        placeholder="Guess"
+        [(ngModel)]="currentGuess"
+        (keydown.enter)="tryEvent()"
+    />
+</mat-form-field>

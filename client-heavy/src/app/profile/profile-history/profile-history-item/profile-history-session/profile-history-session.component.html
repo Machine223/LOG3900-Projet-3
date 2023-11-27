@@ -1,0 +1,5 @@
+<div class="sessionItem" [class.signIn]="isSignIn" [class.signOut]="!isSignIn" [class.warn-color]="!isSignIn">
+    <mat-icon *ngIf="isSignIn">east</mat-icon>
+    <mat-icon *ngIf="!isSignIn">west</mat-icon>
+    <span>{{ eventDate }}</span>
+</div>

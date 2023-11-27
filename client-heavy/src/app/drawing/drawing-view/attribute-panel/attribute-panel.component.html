@@ -1,0 +1,5 @@
+<div id="attributeContainer">
+    <app-pencil-attributes *ngIf="currentMode === constants.PENCIL_TOOL"></app-pencil-attributes>
+    <app-eraser-attributes *ngIf="currentMode === constants.ERASER_TOOL"></app-eraser-attributes>
+    <app-grid-attributes *ngIf="currentMode === constants.GRID_TOOL"></app-grid-attributes>
+</div>

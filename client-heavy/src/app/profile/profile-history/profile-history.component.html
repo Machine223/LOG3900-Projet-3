@@ -1,0 +1,8 @@
+<div id="historyContainer">
+    <mat-spinner *ngIf="isUpdating || isGeneratingHistory"></mat-spinner>
+    <div id="historySpacer" *ngIf="!isUpdating && !isGeneratingHistory">
+        <div class="historyItem" *ngFor="let historyItem of historyItems">
+            <app-profile-history-item [historyItem]="historyItem"></app-profile-history-item>
+        </div>
+    </div>
+</div>

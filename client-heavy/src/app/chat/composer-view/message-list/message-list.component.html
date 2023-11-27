@@ -1,0 +1,6 @@
+<div class="message-list">
+    <div class="no-message" *ngIf="!channel.messages.length">No messages since last connection.</div>
+    <app-chat-message *ngFor="let message of channel.messages" [message]="message" [ngClass]="{ ownMessage: isAuthor(message.author) }">
+    </app-chat-message>
+    <div #latestMessage class="scrollIntoView"></div>
+</div>

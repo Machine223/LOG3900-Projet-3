@@ -1,0 +1,23 @@
+<div *ngIf="game">
+    <div class="wrapper" *ngIf="game.role === role.Drawer">
+        <div class="text-wrapper">
+            <div class="title primary-color">It's your turn to draw!</div>
+            <div class="body">Choose a word among the 3 below.</div>
+        </div>
+        <div class="button-wrapper">
+            <button
+                *ngFor="let word of game.wordChoices"
+                mat-stroked-button
+                [mat-dialog-close]
+                color="primary"
+                (click)="game.chooseWord(word)"
+            >
+                {{ word }}
+            </button>
+        </div>
+    </div>
+    <div class="wrapper" *ngIf="game.role !== role.Drawer">
+        <div class="choosing primary-color">The drawer is choosing a word</div>
+        <mat-progress-bar mode="buffer"> </mat-progress-bar>
+    </div>
+</div>

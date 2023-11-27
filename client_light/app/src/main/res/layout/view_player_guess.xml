@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:id="@+id/everything"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ca.polymtl.project.client.profile.AvatarView
+            android:id="@+id/guess_user_avatar"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:id="@+id/guess_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@+id/guess_user_avatar"
+            android:text="@string/username"
+            android:textColor="?attr/textColor"
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_alignTop="@id/guess_user_name"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="0dp"
+            tools:ignore="NotSibling">
+
+            <TextView
+                android:id="@+id/answer_success_user"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:paddingStart="10dp"
+                android:text="@string/_0"
+                android:textColor="?attr/backgroundNavbar"
+                android:textSize="18sp"
+                app:drawableEndCompat="@drawable/ic_baseline_check_24_green" />
+
+            <TextView
+                android:id="@+id/answer_attempts_user"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignTop="@id/answer_success_user"
+                android:layout_toEndOf="@+id/answer_success_user"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:paddingStart="10dp"
+                android:text="@string/_0"
+                android:textColor="?attr/backgroundNavbar"
+                android:textSize="18sp"
+                app:drawableEndCompat="@drawable/ic_baseline_close_24_red"
+                tools:ignore="RtlSymmetry" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/good_answer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignStart="@+id/everything"
+        android:layout_alignTop="@+id/everything"
+        android:layout_alignEnd="@+id/everything"
+        android:layout_alignBottom="@+id/everything"
+        android:alpha="0"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        app:cardBackgroundColor="@color/green"
+        app:cardCornerRadius="5dp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bad_answer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignStart="@+id/everything"
+        android:layout_alignTop="@+id/everything"
+        android:layout_alignEnd="@+id/everything"
+        android:layout_alignBottom="@+id/everything"
+        android:alpha="0"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        app:cardBackgroundColor="@color/red"
+        app:cardCornerRadius="5dp" />
+
+</RelativeLayout>

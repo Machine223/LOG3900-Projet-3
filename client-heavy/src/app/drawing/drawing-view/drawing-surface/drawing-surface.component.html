@@ -1,0 +1,31 @@
+<div class="background">
+    <svg
+        #scrollableArea
+        id="drawingContainer"
+        [attr.height]="drawingHeight"
+        (mousedown)="onMouseDown($event)"
+        (contextmenu)="cancelContextMenu($event)"
+        (click)="onClick($event)"
+        [attr.width]="drawingWidth"
+        (mouseup)="onMouseUp($event)"
+        (mousemove)="onMouseMove($event)"
+        (mouseleave)="onMouseLeave($event)"
+        (scroll)="onScroll(scrollableArea.scrollLeft, scrollableArea.scrollTop)"
+    >
+        <svg #drawingSurface [attr.height]="drawingHeight" [attr.width]="drawingWidth">
+            <rect
+                x="0"
+                y="0"
+                [attr.height]="drawingHeight"
+                [attr.width]="drawingWidth"
+                [attr.fill]="drawingColor.rgbToHex()"
+                [attr.opacity]="drawingColor.a"
+                rx="4"
+            />
+            <template drawing-host></template>
+        </svg>
+        <svg:svg app-grid></svg:svg>
+        <svg:svg #redRectangle app-red-rectangle></svg:svg>
+        <svg:svg #eraserRectangle app-eraser></svg:svg>
+    </svg>
+</div>

@@ -1,0 +1,45 @@
+<div class="container">
+    <mat-card id="gameRoomList">
+        <mat-icon id="exitgameroomListButton" (click)="backToForm()">keyboard_backspace</mat-icon>
+        <h1 id="gameroomListTitle">Gamerooms</h1>
+        <div id="gameroomParametersAndList">
+            <div id="gameParameters">
+                <span class="parameterTitle">Mode</span>
+                <span class="parameterField">{{ gameModeStringConverter.get(gameMode) }}</span>
+                <span class="parameterTitle">Difficulty</span>
+                <span class="parameterField">{{ difficultyStringConverter.get(difficulty) }}</span>
+            </div>
+            <div id="gameroomContainer" class="tour-gameroomContainer">
+                <div *ngIf="getFilteredGameRoom().length === 0">There are no gamerooms matching these parameters</div>
+                <div *ngFor="let gameroom of getFilteredGameRoom()">
+                    <app-gameroom-list-item [gameroom]="gameroom"></app-gameroom-list-item>
+                </div>
+            </div>
+
+            <div id="addGameroomFooter" class="tour-addGameroomFooter">
+                <mat-form-field appearance="outline" id="newGameroomFormField">
+                    <mat-label>New gameroom name</mat-label>
+                    <input
+                        placeholder="Type the name of the new gameroom..."
+                        [(ngModel)]="newGameroomName"
+                        matInput
+                        (keydown.enter)="createGameroom()"
+                        maxlength="15"
+                    />
+                </mat-form-field>
+                <button
+                    id="addGameroomButton"
+                    mat-mini-fab
+                    aria-label="Add game room"
+                    (click)="createGameroom()"
+                    [disabled]="newGameroomName.trim().length === 0"
+                    matTooltip="Add new gameroom"
+                    matTooltipShowDelay="500"
+                    matTooltipPosition="above"
+                >
+                    <mat-icon>add</mat-icon>
+                </button>
+            </div>
+        </div>
+    </mat-card>
+</div>

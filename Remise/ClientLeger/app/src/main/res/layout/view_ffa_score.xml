@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+
+    <RelativeLayout
+        android:id="@+id/everything"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/drawer_pencil_image"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:src="@drawable/pencil_icon"
+            android:visibility="invisible" />
+
+        <ca.polymtl.project.client.profile.AvatarView
+            android:id="@+id/avatar_view"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/drawer_pencil_image" />
+
+        <TextView
+            android:id="@+id/username_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/avatar_view"
+            android:padding="10dp"
+            android:text="@string/username"
+            android:textColor="?attr/textColor"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/score_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            android:text="@string/_10"
+            android:textColor="?attr/textColor"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/virtual_player_image"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:src="@drawable/ic_android_logo"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/good_answer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignStart="@+id/everything"
+        android:layout_alignTop="@+id/everything"
+        android:layout_alignEnd="@+id/everything"
+        android:layout_alignBottom="@+id/everything"
+        android:alpha="0"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        app:cardBackgroundColor="@color/green"
+        app:cardCornerRadius="5dp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bad_answer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignStart="@+id/everything"
+        android:layout_alignTop="@+id/everything"
+        android:layout_alignEnd="@+id/everything"
+        android:layout_alignBottom="@+id/everything"
+        android:alpha="0"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        app:cardBackgroundColor="@color/red"
+        app:cardCornerRadius="5dp" />
+
+</RelativeLayout>

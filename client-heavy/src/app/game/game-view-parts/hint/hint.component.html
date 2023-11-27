@@ -1,0 +1,16 @@
+<div class="title">Hints</div>
+<div class="section hints">
+    <div class="field primary-color" *ngFor="let hint of hints">{{ hint }}</div>
+    <div #latestMessage class="scrollIntoView"></div>
+</div>
+<button
+    *ngIf="game.hasHintLeft"
+    (click)="hintAsked()"
+    mat-flat-button
+    color="primary"
+    matTooltip="Ask hint"
+    matTooltipShowDelay="500"
+    matTooltipPosition="right"
+>
+    <mat-icon>add</mat-icon>
+</button>

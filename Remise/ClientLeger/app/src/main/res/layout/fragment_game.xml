@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundColor"
+    android:gravity="center">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/timer_card_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        app:cardBackgroundColor="?attr/colorPrimaryDark">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/warning"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignStart="@id/timer"
+                android:layout_alignEnd="@id/timer"
+                android:layout_alignBottom="@id/timer"
+                android:alpha="0.0"
+                android:background="@color/red" />
+
+            <TextView
+                android:id="@+id/timer"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/timer"
+                android:padding="16dp"
+                android:textAlignment="center"
+                android:textColor="?attr/backgroundNavbar"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/dynamic_component_card_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/timer_card_view"
+        android:layout_alignStart="@+id/timer_card_view"
+        android:layout_alignEnd="@+id/timer_card_view"
+        android:layout_marginStart="0dp"
+        app:cardBackgroundColor="?attr/colorPrimaryDark"
+        app:cardCornerRadius="4dp" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/canvas_card_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/timer_card_view"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_toEndOf="@+id/timer_card_view"
+        app:cardElevation="3dp"
+        app:strokeColor="@color/grey"
+        app:strokeWidth="2dp">
+
+        <ca.polymtl.project.client.draw.canvas.CanvasView
+            android:id="@+id/canvas_view"
+            android:layout_width="700px"
+            android:layout_height="700px" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/answer_card_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/canvas_card_view"
+        android:layout_alignStart="@id/canvas_card_view"
+        android:layout_alignEnd="@+id/canvas_card_view"
+        app:cardBackgroundColor="?attr/colorPrimaryDark"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="3dp">
+
+        <EditText
+            android:id="@+id/enter_guess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/answer"
+            android:imeOptions="actionGo"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="20dp"
+            android:textColor="?attr/textColor"
+            android:textColorHint="?attr/textColor" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/score_board_container"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/canvas_card_view"
+        android:layout_toEndOf="@+id/canvas_card_view"
+        android:background="?attr/colorPrimaryDark" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/private_chat_fragment_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/score_board_container"
+        android:layout_alignStart="@+id/score_board_container"
+        android:layout_alignEnd="@+id/score_board_container"
+        android:layout_alignBottom="@+id/answer_card_view"
+        android:layout_marginTop="15dp"
+        app:cardBackgroundColor="?attr/colorPrimaryDark"
+        app:cardCornerRadius="4dp">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/private_chat_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

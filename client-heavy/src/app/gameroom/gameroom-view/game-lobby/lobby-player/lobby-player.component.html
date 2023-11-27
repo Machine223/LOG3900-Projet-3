@@ -1,0 +1,14 @@
+<div class="lobbyPlayerContainer">
+    <app-avatar class="lobbyAvatar" [user]="this.playerName"></app-avatar>
+    <p class="lobbyPlayerName" [ngClass]="{ self: isSelf }">{{ playerName }}</p>
+    <div
+        class="deleteVirtualPlayerIcon warn-background"
+        *ngIf="constants.VIRTUAL_PLAYER_NAMES.has(playerName)"
+        (click)="deleteVirtualPlayer.emit(playerName)"
+        matTooltip="Remove virtual player"
+        matTooltipShowDelay="500"
+        matTooltipPosition="above"
+    >
+        <mat-icon>clear</mat-icon>
+    </div>
+</div>

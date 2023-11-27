@@ -1,0 +1,33 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+mat-icon,
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+}
+
+.error {
+    background-color: #d32f2f;
+}
+
+.success {
+    background-color: #43a047;
+}
+
+.button-dismiss {
+    border: none;
+    margin: 0;
+    padding: 0;
+}

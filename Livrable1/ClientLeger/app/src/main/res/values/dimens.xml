@@ -1,0 +1,5 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_box_name_margin">10dp</dimen>
+    <dimen name="text_bix_name_font_size">16sp</dimen>
+</resources>

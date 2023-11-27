@@ -1,0 +1,18 @@
+.message-list {
+    height: 100%;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: auto;
+    grid-auto-rows: min-content;
+    width: 100%;
+    max-width: 100%;
+}
+
+app-chat-message {
+    max-width: 75%;
+    width: 75%;
+}
+
+.ownMessage {
+    justify-self: end;
+}

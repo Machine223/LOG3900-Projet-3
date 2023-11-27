@@ -1,0 +1,9 @@
+<div class="color-wrapper">
+    <button
+        *ngFor="let color of colorService.colorChoices"
+        mat-stroked-button
+        class="color-choice"
+        (click)="onPresetChosen(color)"
+        [ngStyle]="{ 'background-color': color.getStyle() }"
+    ></button>
+</div>

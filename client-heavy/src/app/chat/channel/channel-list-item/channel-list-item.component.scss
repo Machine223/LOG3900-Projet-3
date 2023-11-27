@@ -1,0 +1,40 @@
+.joinedChannel {
+    width: 100%;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: auto 24px 30px 24px 24px 0px;
+    align-items: center;
+
+    .mic {
+        display: grid;
+        align-items: center;
+    }
+}
+
+.notJoinedChannel {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: auto 24px;
+    padding-left: 10px;
+    user-select: none;
+    border-color: black;
+}
+
+.joinIcon {
+    cursor: pointer;
+}
+
+.nUserValue {
+    justify-self: end;
+}
+
+.channelName {
+    max-width: min-content;
+    white-space: nowrap;
+}
+
+.general {
+    font-weight: 500;
+}

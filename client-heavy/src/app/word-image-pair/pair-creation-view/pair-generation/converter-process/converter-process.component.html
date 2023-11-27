@@ -1,0 +1,57 @@
+<mat-horizontal-stepper linear #stepper>
+    <mat-step [completed]="pairCreator.base64Image">
+        <ng-template matStepLabel>Choose your image</ng-template>
+        <div id="importImageStep">
+            <app-import-generation class="stepperContent" *ngIf="pairCreator.creationMode === 1"></app-import-generation>
+            <app-online-search-generation class="stepperContent" *ngIf="pairCreator.creationMode === 3"></app-online-search-generation>
+            <div class="stepButtons">
+                <button class="previousButton" mat-stroked-button (click)="exit()">
+                    <mat-icon>west</mat-icon>
+                    Exit
+                </button>
+                <button class="nextButton" mat-stroked-button [disabled]="!pairCreator.base64Image" matStepperNext>
+                    Next
+                    <mat-icon>east</mat-icon>
+                </button>
+            </div>
+        </div>
+    </mat-step>
+    <mat-step [completed]="imageConverter.isConverting || imageConverter.paths.length > 0">
+        <ng-template matStepLabel>Crop the image</ng-template>
+        <div id="importImageStep">
+            <app-image-cropper class="stepperContent" [base64Image]="pairCreator.base64Image"></app-image-cropper>
+            <div class="stepButtons">
+                <button class="previousButton" mat-stroked-button matStepperPrevious>
+                    <mat-icon>west</mat-icon>
+                    Back
+                </button>
+                <button mat-raised-button class="nextButton" color="primary" (click)="startConversion()">
+                    <mat-icon>loop</mat-icon>
+                    Convert
+                </button>
+            </div>
+        </div>
+    </mat-step>
+    <mat-step [completed]="imageConverter.paths.length > 0">
+        <ng-template matStepLabel>Modify converted image</ng-template>
+        <div id="importImageStep">
+            <app-conversion-view class="stepperContent"></app-conversion-view>
+            <div class="stepButtons">
+                <button class="previousButton" mat-stroked-button matStepperPrevious [disabled]="imageConverter.isConverting">
+                    <mat-icon>west</mat-icon>
+                    Back
+                </button>
+                <button
+                    mat-raised-button
+                    class="nextButton"
+                    color="primary"
+                    (click)="saveDrawing()"
+                    [disabled]="imageConverter.isConverting"
+                >
+                    <mat-icon>save</mat-icon>
+                    Save result
+                </button>
+            </div>
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>

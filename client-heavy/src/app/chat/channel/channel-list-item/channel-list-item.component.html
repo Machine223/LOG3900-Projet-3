@@ -1,0 +1,39 @@
+<div *ngIf="channel.isJoined" class="joinedChannel">
+    <span
+        class="channelName"
+        matBadgeSize="small"
+        matBadgeColor="warn"
+        [matBadge]="channel.nUnreadMessages"
+        matBadgeOverlap="false"
+        [matBadgeHidden]="channel.nUnreadMessages === 0"
+        [ngClass]="{ general: isGeneral }"
+        >{{ channel.name.replace("'s private channel", '') }}</span
+    >
+
+    <div class="mic">
+        <mat-icon *ngIf="isVoiceChat">mic</mat-icon>
+    </div>
+    <div class="nUserValue">{{ channel.users.size }}</div>
+    <mat-icon>person</mat-icon>
+    <mat-icon
+        *ngIf="!channel.isGameChannel && !isGeneral"
+        (click)="menuClicked($event)"
+        [matMenuTriggerFor]="channelMenu"
+        matTooltip="Options"
+        matTooltipShowDelay="500"
+        matTooltipPosition="left"
+        >more_vert</mat-icon
+    >
+    <div *ngIf="channel.isGameChannel"></div>
+    <mat-menu #channelMenu="matMenu">
+        <button mat-menu-item (click)="onLeave($event)">Leave</button>
+        <button mat-menu-item (click)="onDelete($event)">Delete</button>
+    </mat-menu>
+</div>
+
+<div *ngIf="!channel.isJoined" class="notJoinedChannel">
+    <div>{{ channel.name }}</div>
+    <mat-icon matTooltip="Join channel" matTooltipShowDelay="500" matTooltipPosition="left" class="joinIcon" (click)="onJoin($event)"
+        >add</mat-icon
+    >
+</div>

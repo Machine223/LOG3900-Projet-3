@@ -1,0 +1,14 @@
+<svg:g>
+    <svg:g *ngIf="data.isVisible">
+        <svg:rect
+            [attr.id]="'redRectangle'"
+            [attr.x]="data.perimeter.upperLeftCorner.x"
+            [attr.y]="data.perimeter.upperLeftCorner.y"
+            [attr.width]="data.perimeter.width"
+            [attr.height]="data.perimeter.height"
+            [attr.stroke]="data.primaryColor"
+            [attr.fill]="'none'"
+            [attr.stroke-width]="data.outlineWidth"
+        />
+    </svg:g>
+</svg:g>

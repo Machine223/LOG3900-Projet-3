@@ -1,0 +1,23 @@
+<div class="otherMessageContainer" *ngIf="!isAuthor()">
+    <app-avatar [user]="message.author"></app-avatar>
+
+    <div class="otherMessageAndInfoContainer">
+        <div class="otherMessage">{{ message.content.trim() }}</div>
+        <div class="otherInfoContainer">
+            <div class="author">
+                {{ message.author }}
+            </div>
+            <span> </span>
+            <div class="timestamp">
+                {{ timestampToString() }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ownMessageContainer" *ngIf="isAuthor()">
+    <div class="ownMessage primary-background">{{ message.content }}</div>
+    <div class="timestamp">
+        {{ timestampToString() }}
+    </div>
+</div>

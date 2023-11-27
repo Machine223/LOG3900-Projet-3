@@ -1,0 +1,6 @@
+<div class="message-list">
+    <div class="no-message" *ngIf="!messages.length">No messages yet.</div>
+    <app-message *ngFor="let message of messages" [message]="message">
+    </app-message>
+    <div #latestMessage class="scrollIntoView"></div>
+</div>

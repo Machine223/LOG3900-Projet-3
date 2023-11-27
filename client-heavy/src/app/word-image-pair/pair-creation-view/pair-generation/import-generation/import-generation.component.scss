@@ -1,0 +1,30 @@
+#importImageContainer {
+    display: grid;
+    width: fit-content;
+    margin: auto;
+    height: 100%;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 700px;
+    row-gap: 30px;
+}
+
+#image {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
+
+#imageContainer {
+    height: 700px;
+    width: 700px;
+    border: solid black 1px;
+    box-sizing: border-box;
+}
+
+#selectImageButton {
+    width: 200px;
+    height: 40px;
+}

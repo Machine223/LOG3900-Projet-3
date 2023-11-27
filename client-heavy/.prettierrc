@@ -1,0 +1,12 @@
+{
+    "printWidth": 140,
+    "useTabs": false,
+    "tabWidth": 4,
+    "trailingComma": "all",
+    "arrowParens": "always",
+    "disableLanguages": [],
+    "singleQuote": true,
+    "endOfLine": "lf",
+    "bracketSpacing": true,
+    "semi": true
+}

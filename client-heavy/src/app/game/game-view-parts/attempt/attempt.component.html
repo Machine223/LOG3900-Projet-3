@@ -1,0 +1,12 @@
+<div class="section" *ngIf="game.linkedGameroom.gameMode !== gameMode.Melee">
+    <div class="title">Attempts Left</div>
+    <div class="field primary-color">{{ game.attemptLeft }}</div>
+</div>
+<div class="title">Previous Attempts</div>
+<div class="section tries">
+    <div class="field primary-color attempt-wrapper" *ngFor="let previousTry of game.previousTries">
+        <mat-icon class="warn-color close">close</mat-icon>
+        <div class="previous-attempt">{{ previousTry }}</div>
+    </div>
+    <div #latestMessage class="scrollIntoView"></div>
+</div>

@@ -1,0 +1,13 @@
+<mat-card id="previewView">
+    <div>
+        <mat-icon id="exitPairPreviewButton" (click)="backToPairInformation()">keyboard_backspace</mat-icon>
+        <h1 id="pairPreviewTitle">Pair preview</h1>
+    </div>
+    <app-drawing-surface [isEditable]="false"></app-drawing-surface>
+    <button class="playStopButton" mat-mini-fab (click)="startPreview()" *ngIf="!virtualDrawer.isDrawing">
+        <mat-icon>play_arrow</mat-icon>
+    </button>
+    <button class="playStopButton" mat-mini-fab (click)="stopPreview()" *ngIf="virtualDrawer.isDrawing">
+        <mat-icon>stop</mat-icon>
+    </button>
+</mat-card>

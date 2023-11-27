@@ -1,0 +1,4 @@
+<mat-card>
+    <div class="alert" [@alert]="isAlert ? 'event' : 'calm'"></div>
+    <div *ngIf="formatedTimes" class="time-left primary-color">{{ formatedTimes }}</div>
+</mat-card>

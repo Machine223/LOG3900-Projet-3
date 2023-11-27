@@ -1,0 +1,17 @@
+<div class="view">
+    <div id="drawingContainer">
+        <div class="left">
+            <app-drawing-panel></app-drawing-panel>
+
+            <mat-card class="buttons">
+                <button mat-stroked-button color="primary" (click)="cancelDrawing()">Cancel</button>
+                <button mat-flat-button color="primary" (click)="saveDrawing()">Save</button>
+            </mat-card>
+        </div>
+
+        <mat-card class="drawing-wrapper">
+            <app-drawing-surface id="workingArea" [isEditable]="true"></app-drawing-surface>
+        </mat-card>
+        <div class="right"></div>
+    </div>
+</div>

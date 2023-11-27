@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/infos"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ca.polymtl.project.client.profile.AvatarView
+        android:id="@+id/avatar_view"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp" />
+
+    <RelativeLayout
+        android:id="@+id/first_name_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/avatar_view"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/first_name_text"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:text="@string/first_name_hint"
+            android:textColor="?attr/textColor"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/profileFirstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/first_name_text"
+            android:ems="20"
+            android:foreground="@drawable/bordered_text"
+            android:hint="@string/first_name_hint"
+            android:padding="12dp"
+            android:textColor="?attr/textColor"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/last_name_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/first_name_container"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/last_name_text"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:text="@string/last_name_hint"
+            android:textColor="?attr/textColor"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/profileLastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/last_name_text"
+            android:ems="20"
+            android:foreground="@drawable/bordered_text"
+            android:hint="@string/last_name_hint"
+            android:padding="12dp"
+            android:textColor="?attr/textColor"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/username_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/last_name_container"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/username_text"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:text="@string/username_hint"
+            android:textColor="?attr/textColor"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/profileUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/username_text"
+            android:ems="20"
+            android:foreground="@drawable/bordered_text"
+            android:hint="@string/username_hint"
+            android:outlineAmbientShadowColor="?attr/textColor"
+            android:padding="12dp"
+            android:textColor="?attr/textColor"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/theme_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username_container"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:id="@+id/game_mode_title"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:text="@string/theme_mode"
+            android:textColor="?attr/textColor"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/theme_mode_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/game_mode_title"
+            android:backgroundTint="?attr/textColor"
+            android:foreground="@drawable/bordered_text"
+            android:spinnerMode="dropdown" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/message_theme_change"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/theme_container"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/text_theme_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/red"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

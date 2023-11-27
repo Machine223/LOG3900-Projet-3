@@ -1,0 +1,77 @@
+<div id="channelView">
+    <div id="titleHeader">
+        <h1 id="channelListHeader">Channels</h1>
+        <mat-icon
+            *ngIf="!isDetached"
+            class="iconButton"
+            matTooltip="Detach chat"
+            matTooltipShowDelay="500"
+            matTooltipPosition="left"
+            (click)="onDetachChat()"
+            >open_in_new</mat-icon
+        >
+    </div>
+
+    <mat-form-field id="searchField" appearance="outline">
+        <mat-label>Filter</mat-label>
+        <input matInput [(ngModel)]="filterCriteria" (input)="onFilterChange()" />
+        <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+
+    <div id="channelList">
+        <div *ngIf="viewOption.isChatDetached">
+            <div class="channelSubheader" matSubheader *ngIf="filteredGameChannels.length !== 0">Game channel</div>
+            <mat-selection-list [multiple]="false" [disableRipple]="true" *ngIf="filteredGameChannels.length !== 0">
+                <mat-list-option role="listitem" *ngFor="let channel of filteredGameChannels" (click)="onSelect(channel.name)"
+                    ><app-channel-list-item [channel]="channel"></app-channel-list-item
+                ></mat-list-option>
+            </mat-selection-list>
+            <mat-divider
+                class="channelDivider"
+                *ngIf="filteredGameChannels.length !== 0 && filteredJoinedChannels.length !== 0"
+            ></mat-divider>
+        </div>
+
+        <div class="channelSubheader" matSubheader *ngIf="filteredJoinedChannels.length !== 0">Joined channels</div>
+        <mat-selection-list [multiple]="false" [disableRipple]="true" *ngIf="filteredJoinedChannels.length !== 0">
+            <mat-list-option role="listitem" *ngFor="let channel of filteredJoinedChannels" (click)="onSelect(channel.name)"
+                ><app-channel-list-item [channel]="channel"></app-channel-list-item
+            ></mat-list-option>
+        </mat-selection-list>
+        <mat-divider
+            class="channelDivider"
+            *ngIf="filteredJoinedChannels.length !== 0 && filteredNotJoinedChannels.length !== 0"
+        ></mat-divider>
+
+        <div class="channelSubheader" matSubheader *ngIf="filteredNotJoinedChannels.length !== 0">Available channels</div>
+        <mat-list *ngIf="filteredNotJoinedChannels.length !== 0">
+            <mat-list-item role="listitem" *ngFor="let channel of filteredNotJoinedChannels"
+                ><app-channel-list-item [channel]="channel"></app-channel-list-item
+            ></mat-list-item>
+        </mat-list>
+    </div>
+
+    <div id="addChannelFooter">
+        <mat-form-field appearance="outline" id="newChannelFormField">
+            <mat-label>New channel name</mat-label>
+            <input
+                placeholder="Type the name of the new channel..."
+                [(ngModel)]="newChannelName"
+                matInput
+                (keydown.enter)="createChannel()"
+                maxlength="13"
+            />
+        </mat-form-field>
+        <button
+            id="addChannelButton"
+            mat-mini-fab
+            (click)="createChannel()"
+            [disabled]="newChannelName.trim().length === 0"
+            matTooltip="Add new channel"
+            matTooltipShowDelay="500"
+            matTooltipPosition="above"
+        >
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+</div>

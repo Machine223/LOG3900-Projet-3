@@ -1,0 +1,7 @@
+<h2>
+    Delete <b>{{ channel.name }}</b> channel?
+</h2>
+<div class="buttons">
+    <button [mat-dialog-close] class="button" mat-button color="primary">Cancel</button>
+    <button [mat-dialog-close] class="button" mat-button color="warn" (click)="onDelete()">Delete</button>
+</div>

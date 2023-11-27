@@ -1,0 +1,5 @@
+<mat-card>
+    <div class="board">
+        <app-leaderboard-item *ngFor="let user of game.linkedGameroom.users" [user]="user"></app-leaderboard-item>
+    </div>
+</mat-card>

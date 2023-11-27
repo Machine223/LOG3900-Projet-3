@@ -1,0 +1,38 @@
+<div *ngIf="isFFAGame">
+    <div class="gameResult">
+        Winner : <span class="primary-color">{{ sortedScoreBoard[0][0] }} </span>
+    </div>
+    <div class="board">
+        <div *ngFor="let score of sortedScoreBoard">
+            <div class="row" [ngClass]="{ 'is-self': isSelf(score[0]) }">
+                <app-avatar class="endGameAvatar" [user]="score[0]"></app-avatar>
+                <div class="name">{{ score[0] }}</div>
+                <div class="score">{{ score[1] }}pts</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!isFFAGame">
+    <div class="gameResult">
+        Final score : <span class="primary-color">{{ score }}pts</span>
+    </div>
+    <div class="userAnswerCounter">
+        <div *ngFor="let guessCounter of guessCounters" class="playerCounterContainer">
+            <div class="answerCounterItem">
+                <app-avatar class="endGameAvatar" [user]="guessCounter[0]"></app-avatar>
+                <div class="userId" [ngClass]="{ 'is-self': isSelf(guessCounter[0]) }">
+                    {{ guessCounter[0] }}
+                </div>
+                <div class="iconValue">
+                    <div class="answerValue primary-color">{{ guessCounter[1][0] }}</div>
+                    <mat-icon class="goodGuess" [inline]="true">done</mat-icon>
+                </div>
+                <div class="iconValue">
+                    <div class="answerValue primary-color">{{ guessCounter[1][1] }}</div>
+                    <mat-icon class="warn-color" [inline]="true">close</mat-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

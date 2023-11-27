@@ -1,0 +1,61 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!-- Light/Day mode theme. -->
+    <style name="Theme.light" parent="Fullscreen.Material">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryContrast">@color/colorPrimaryContrast</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="textColor">#000000</item>
+        <item name="android:textColorPrimary">@color/button_states_light</item>
+        <item name="backgroundColor">@color/colorAccent</item>
+        <item name="backgroundNavbar">@color/colorBackgroundNavbar</item>
+    </style>
+
+    <!-- Dark/night mode theme. NOT DONE TODO finish implement dark mode -->
+    <style name="Theme.dark" parent="Fullscreen.Material">
+        <item name="colorPrimary">#C7C4CD</item>
+        <item name="colorPrimaryDark">#424242</item>
+        <item name="colorPrimaryContrast">#fafafa</item>
+        <item name="colorAccent">#252222</item>
+        <item name="textColor">#ffffff</item>
+        <item name="android:textColorPrimary">@color/button_states_dark</item>
+        <item name="backgroundColor">#303030</item>
+        <item name="backgroundNavbar">#009688</item>
+    </style>
+
+    <style name="Fullscreen.Material" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="WindowAnimationTransition">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <style name="Theme.light.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.light.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Widget.App.Button.OutlinedButton.IconOnly" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="iconPadding">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+    <style name="ColoredOutline" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/border_color</item>
+        <item name="android:textColorHint">?attr/textColor</item>
+        <item name="hintTextColor">?attr/textColor</item>
+    </style>
+</resources>

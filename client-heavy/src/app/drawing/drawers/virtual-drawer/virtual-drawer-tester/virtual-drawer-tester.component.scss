@@ -1,0 +1,36 @@
+#virtualDrawerTesterView {
+    display: grid;
+    grid-template-rows: min-content min-content;
+    grid-template-columns: auto;
+    margin: auto;
+    width: min-content;
+}
+
+#virtualDrawerTesterTitle {
+    padding-left: 10px;
+    display: inline;
+    font-size: 40px;
+    box-sizing: border-box;
+}
+
+#exitVirtualDrawerTesterButton {
+    cursor: pointer;
+}
+
+#virtualDrawerFormAndPreview {
+    display: grid;
+    grid-template-columns: 300px min-content;
+    width: min-content;
+}
+
+mat-slider {
+    width: 100%;
+}
+mat-form-field {
+    width: 100%;
+}
+
+h3 {
+    margin: 0px;
+    padding-top: 20px;
+}

@@ -1,0 +1,40 @@
+<mat-expansion-panel class="historyGamePanel">
+    <mat-expansion-panel-header>
+        <mat-panel-title> {{ eventDate }}</mat-panel-title>
+
+        <mat-panel-description class="historyGamePanelInfo">
+            <span>{{ itemGameMode }} </span>
+            <span>{{ playerScores.length }}</span>
+            <mat-icon>person</mat-icon>
+            <span>{{ virtualPlayers.length }}</span>
+            <mat-icon>android</mat-icon>
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <div class="gameResult" *ngIf="!isFFAGame">Final score : {{ playerScores[0][1] }}</div>
+    <div class="gameResult" *ngIf="isFFAGame">Winner : {{ playerScores[0][0] }}</div>
+
+    <div class="gameHistoryContainer">
+        <div>
+            <h3 mat-subheader>Human players</h3>
+            <div *ngIf="playerScores.length === 0">No human players</div>
+            <div class="gameHistoryPlayerList">
+                <div class="playerListItem" *ngFor="let playerScore of playerScores">
+                    <app-avatar class="gameHistoryAvatar" [user]="playerScore[0]"></app-avatar>
+                    <span *ngIf="isFFAGame">{{ playerScore[0] }} - {{ round(playerScore[1]) }}</span>
+                    <span *ngIf="!isFFAGame">{{ playerScore[0] }}</span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h3 mat-subheader>Virtual players</h3>
+            <div *ngIf="virtualPlayers.length === 0">No virtual players</div>
+            <div class="gameHistoryPlayerList">
+                <div class="playerListItem" *ngFor="let virtualPlayer of virtualPlayers">
+                    <app-avatar class="gameHistoryAvatar" [user]="virtualPlayer"></app-avatar>
+                    <span>{{ virtualPlayer }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-expansion-panel>

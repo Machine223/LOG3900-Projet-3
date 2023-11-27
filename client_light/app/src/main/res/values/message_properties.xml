@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="message_timestamp_text_size">10sp</dimen>
+    <dimen name="message_content_margin">4dp</dimen>
+    <dimen name="message_content_padding">10dp</dimen>
+    <dimen name="message_wrapper_padding_h">20dp</dimen>
+    <dimen name="message_wrapper_padding_v">10dp</dimen>
+    <dimen name="message_full_wrapper_padding">20dp</dimen>
+
+    <color name="message_self">#673AB7</color>
+    <color name="message_text_self">#FFFFFF</color>
+
+    <color name="message_other">#D3D3D3</color>
+    <color name="message_text_other">#000000</color>
+</resources>

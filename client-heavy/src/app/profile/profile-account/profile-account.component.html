@@ -1,0 +1,25 @@
+<div id="profilePresenter">
+    <div class="avatar-wrapper">
+        <app-avatar [user]="username"></app-avatar>
+    </div>
+    <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput type="text" [value]="firstName" readonly />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput type="text" [value]="lastName" readonly />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput type="text" [value]="username" readonly />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Theme</mat-label>
+        <mat-select [(value)]="themeService.theme">
+            <mat-option [value]="0">Light</mat-option>
+            <mat-option [value]="1">Dark</mat-option>
+            <mat-option [value]="2">Automatic</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

@@ -1,0 +1,62 @@
+#quickDrawGenerationCard {
+    width: fit-content;
+    margin: auto;
+    margin-top: 10px;
+}
+
+#quickDrawContainer {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: 300px auto;
+    column-gap: 30px;
+}
+
+#quickDrawSurface {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    column-gap: 10px;
+}
+
+#quickDrawOptions {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    row-gap: 20px;
+    align-self: center;
+    justify-self: center;
+    justify-items: center;
+}
+
+#quickDrawItems {
+    display: grid;
+    width: fit-content;
+    grid-template-rows: 40px auto;
+    justify-items: center;
+}
+
+.quickDrawParametersName {
+    padding: 0px;
+    height: fit-content;
+    margin: 0px;
+}
+
+.quickDrawOptionGroup {
+    height: fit-content;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-rows: 50% 50%;
+}
+
+#quickDrawSaveButtons {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 50px;
+}
+
+.quickDrawTitle {
+    font-weight: 500;
+    font-size: 40px;
+    margin: 0;
+}

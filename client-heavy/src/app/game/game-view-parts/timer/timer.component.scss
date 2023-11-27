@@ -1,0 +1,26 @@
+.mat-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    height: 100px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.seconds {
+    font-size: 24px;
+}
+
+.time-left {
+    font-size: 42px;
+    font-weight: 700;
+    text-align: start;
+}
+
+.alert {
+    position: absolute;
+    width: 334px;
+    height: 100px;
+    border-radius: 4px;
+}

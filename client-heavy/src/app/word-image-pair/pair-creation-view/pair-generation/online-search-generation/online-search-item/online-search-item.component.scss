@@ -1,0 +1,22 @@
+.onlineImage {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
+
+.onlineImageContainer {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.onlineImageContainer:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.onlineImageSelected {
+    background-color: rgba(0, 0, 0, 0.1);
+}

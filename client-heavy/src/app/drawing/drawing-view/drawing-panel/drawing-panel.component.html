@@ -1,0 +1,5 @@
+<mat-card class="drawing-panel" (mouseup)="onMouseUp($event)">
+    <app-color-attributes></app-color-attributes>
+    <app-lateral-bar></app-lateral-bar>
+    <app-attribute-panel [class.show]="showPanel"></app-attribute-panel>
+</mat-card>

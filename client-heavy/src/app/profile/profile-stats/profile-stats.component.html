@@ -1,0 +1,25 @@
+<div id="statsContainer">
+    <mat-spinner *ngIf="isUpdating"></mat-spinner>
+    <div id="statsPresenter" *ngIf="!isUpdating">
+        <mat-form-field appearance="outline">
+            <mat-label>Game played</mat-label>
+            <input matInput type="text" [value]="nGamePlayed" readonly />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Total time played</mat-label>
+            <input matInput type="text" [value]="timePlayed" readonly />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Average time per game</mat-label>
+            <input matInput type="text" [value]="timePerGame" readonly />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Win ratio (Free-for-all)</mat-label>
+            <input matInput type="text" [value]="winRatio" readonly />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Best sprint solo score</mat-label>
+            <input matInput type="text" [value]="soloScore" readonly />
+        </mat-form-field>
+    </div>
+</div>

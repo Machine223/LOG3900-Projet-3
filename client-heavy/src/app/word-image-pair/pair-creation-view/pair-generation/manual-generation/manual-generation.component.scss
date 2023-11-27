@@ -1,0 +1,46 @@
+.left {
+    margin: 16px 0 16px 16px;
+}
+
+.buttons {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 0;
+
+    button {
+        width: 80px;
+        height: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+    }
+}
+
+.view {
+    display: grid;
+    justify-self: center;
+    height: 100%;
+}
+
+#drawingContainer {
+    display: grid;
+    grid-template-columns: 350px auto 350px;
+    grid-template-rows: 100%;
+    margin: auto;
+    height: fit-content;
+    width: fit-content;
+}
+
+.drawing-wrapper {
+    width: fit-content;
+    height: fit-content;
+    padding: 0 !important;
+    margin: 16px;
+}
+
+#workingArea {
+    overflow: auto;
+}

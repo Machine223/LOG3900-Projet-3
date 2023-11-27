@@ -1,0 +1,24 @@
+<app-top-bar></app-top-bar>
+<mat-sidenav-container id="sidenav-container" [hasBackdrop]="false">
+    <!-- <button (click)="buttonClicked()">HackSignIn</button>
+    <button (click)="buttonClicked2()">HackSignOut</button> -->
+    <!-- <button (click)="currentView = constants.MAIN_MENU">BackToMenu</button> -->
+
+    <app-main-menu *ngIf="currentView === constants.MAIN_MENU" (newNavigation)="currentView = $event"></app-main-menu>
+    <app-gameroom-view *ngIf="currentView === constants.START_GAME" (newNavigation)="currentView = $event"></app-gameroom-view>
+    <app-pair-creation-view *ngIf="currentView === constants.PAIR_CREATION" (newNavigation)="currentView = $event"></app-pair-creation-view>
+    <app-virtual-drawer-tester
+        *ngIf="currentView === constants.VIRTUAL_DRAWER_TESTER"
+        (newNavigation)="currentView = $event"
+    ></app-virtual-drawer-tester>
+
+    <mat-sidenav
+        [ngClass]="{ 'chat-sidenav': !isDetached }"
+        [opened]="viewOption.isChatSideNavOpened && !tutorial.isTutorial"
+        mode="over"
+        position="end"
+        [disableClose]="true"
+    >
+        <app-general-chat *ngIf="!isDetached && !tutorial.isTutorial"></app-general-chat>
+    </mat-sidenav>
+</mat-sidenav-container>

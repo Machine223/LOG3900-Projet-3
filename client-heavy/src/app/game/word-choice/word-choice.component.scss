@@ -1,0 +1,46 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+
+    button {
+        margin-right: 8px;
+    }
+
+}
+
+.text-wrapper {
+    .title {
+        text-align: start;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 32px;
+        margin-bottom: 8px;
+    }
+
+    .body {
+        font-weight: normal;
+        font-size: 12px;
+        opacity: 0.6;
+        margin-bottom: 24px;
+
+    }
+}
+
+.choosing {
+    font-size: 20px;
+    margin-bottom: 16px;
+    font-weight: 500;
+
+}

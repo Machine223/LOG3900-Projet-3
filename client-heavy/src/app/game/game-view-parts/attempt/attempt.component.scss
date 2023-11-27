@@ -1,0 +1,54 @@
+.tries {
+    overflow-y: auto;
+    max-height: 200px;
+}
+
+.title {
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.section {
+    margin-bottom: 32px;
+
+    .field {
+        font-weight: 500;
+        font-size: 18px;
+        margin-bottom: 8px;
+        word-break: break-word;
+        white-space: break-spaces;
+    }
+
+    .attempt-wrapper {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+
+        .material-icons {
+            font-size: 20px !important;
+        }
+
+        .close {
+            margin-right: 4px;
+            height: auto;
+            width: auto;
+        }
+    }
+
+    button {
+        min-width: 0 !important;
+        padding: 0 !important;
+        width: 32px;
+        height: 32px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .mat-icon {
+            height: 24px;
+            width: 24px;
+            font-size: 24px;
+        }
+    }
+}

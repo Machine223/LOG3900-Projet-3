@@ -1,0 +1,29 @@
+.title {
+    color: #414651;
+    padding: 27px 30px;
+    font-size: 24px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+    .avatar-unit {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+
+        .avatar {
+            margin-right: 10px;
+        }
+
+        #username {
+            font-weight: medium;
+        }
+    }
+
+    .logout {
+        display: block;
+        cursor: pointer;
+    }
+}

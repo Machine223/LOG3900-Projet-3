@@ -1,0 +1,16 @@
+{
+	"drawer": "",
+	"virtualDrawing": {
+		"drawing": {
+			"elements": [],
+			"coordinates": [],
+			"background": "#FFFFFF",
+			"backgroundOpacity": 1
+		},
+		"hints": [],
+		"word": "laptop",
+		"difficulty": 0,
+		"delay": 50,
+		"isRandom": false
+	}
+}

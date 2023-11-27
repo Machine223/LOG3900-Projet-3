@@ -1,0 +1,90 @@
+<div class="container">
+    <mat-card id="creationInformation">
+        <mat-icon id="exitPairCreationButton" (click)="backToMenu()">keyboard_backspace</mat-icon>
+        <h1 id="pairCreationTitle">Create pairs</h1>
+
+        <form id="creationForm" [formGroup]="pairInfoForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Creation mode</mat-label>
+                <mat-select [(value)]="pairCreator.creationMode">
+                    <mat-option [value]="0">Manual</mat-option>
+                    <mat-option [value]="1">Import an image</mat-option>
+                    <mat-option [value]="2">Import from drawing database</mat-option>
+                    <mat-option [value]="3">Online image search</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Word or expression</mat-label>
+                <input matInput placeholder="Ex. Pizza" [(ngModel)]="pairCreator.word" maxlength="50" formControlName="word" required />
+                <mat-error>A word or expression is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field id="hintChipList" appearance="outline">
+                <mat-chip-list #chipList formControlName="hints" required>
+                    <mat-chip *ngFor="let hint of pairCreator.hints" [removable]="true" (removed)="removeHint(hint)">
+                        {{ hint }}
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip>
+                    <input
+                        placeholder="Hints"
+                        [matChipInputFor]="chipList"
+                        [matChipInputSeparatorKeyCodes]="constants.SEPARATOR_KEYS_CODES"
+                        [matChipInputAddOnBlur]="true"
+                        (matChipInputTokenEnd)="addHint($event)"
+                    />
+                </mat-chip-list>
+                <mat-error>At least one hint is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Difficulty</mat-label>
+                <mat-select [(value)]="pairCreator.difficulty">
+                    <mat-option [value]="0">Easy</mat-option>
+                    <mat-option [value]="1">Moderate</mat-option>
+                    <mat-option [value]="2">Hard</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Drawing mode</mat-label>
+                <mat-select [(value)]="pairCreator.drawingMode">
+                    <mat-select-trigger>
+                        {{ drawingModes[pairCreator.drawingMode] }}
+                    </mat-select-trigger>
+                    <mat-option [value]="0" [disabled]="pairCreator.savedCreationMode === 1 || pairCreator.savedCreationMode === 3"
+                        ><mat-icon>update</mat-icon>Classic</mat-option
+                    >
+                    <mat-option [value]="1"> <mat-icon>shuffle</mat-icon>Random </mat-option>
+                    <mat-optgroup label="Panoramic">
+                        <mat-option [value]="2"> <mat-icon>east</mat-icon>Right </mat-option>
+                        <mat-option [value]="4"> <mat-icon>west</mat-icon>Left </mat-option>
+                        <mat-option [value]="3"> <mat-icon>south</mat-icon>Down </mat-option>
+                        <mat-option [value]="5"> <mat-icon>north</mat-icon>Up </mat-option>
+                    </mat-optgroup>
+                    <mat-optgroup label="Centered">
+                        <mat-option [value]="6"> <mat-icon>open_in_full</mat-icon>Inside Out </mat-option>
+                        <mat-option [value]="7"> <mat-icon>close_fullscreen</mat-icon>Outside In </mat-option>
+                    </mat-optgroup>
+                </mat-select>
+            </mat-form-field>
+
+            <button type="button" (click)="showGenerateView()" mat-stroked-button>Generate new drawing</button>
+            <button type="button" *ngIf="pairCreator.hasSavedDrawing()" (click)="showEditView()" mat-stroked-button>
+                Modify drawing manually
+            </button>
+            <button type="button" (click)="showPreviewView()" [disabled]="!pairCreator.hasSavedDrawing()" mat-stroked-button>
+                Preview drawing
+            </button>
+            <button
+                type="button"
+                (click)="uploadPair()"
+                [disabled]="!pairCreator.hasSavedDrawing() || pairInfoForm.invalid"
+                mat-raised-button
+                color="primary"
+            >
+                Upload Pair
+            </button>
+        </form>
+    </mat-card>
+</div>

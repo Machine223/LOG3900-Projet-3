@@ -1,0 +1,36 @@
+.lobbyPlayerContainer {
+    height: 180px;
+    display: grid;
+    grid-template-columns: fit-content;
+    grid-template-rows: 150px 30px;
+    justify-items: center;
+    align-items: center;
+}
+
+.deleteVirtualPlayerIcon {
+    cursor: pointer;
+    position: relative;
+    bottom: 180px;
+    left: 60px;
+    border-radius: 1000px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.lobbyPlayerName {
+    margin: 0px;
+    font-size: 20px;
+}
+
+.lobbyAvatar {
+    width: 150px;
+    height: 150px;
+}
+
+.self {
+    font-weight: 500;
+}

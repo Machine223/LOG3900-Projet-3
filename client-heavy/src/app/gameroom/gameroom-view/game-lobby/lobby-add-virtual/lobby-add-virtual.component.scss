@@ -1,0 +1,40 @@
+#addVirtualDetails {
+    font-size: 19px;
+}
+
+#addVirtualContainer {
+    display: grid;
+    grid-template-columns: fit-content;
+    grid-template-rows: 150px 30px;
+    justify-items: center;
+    align-items: center;
+}
+
+#addVirtualButton {
+    border: solid 2px lightgray;
+    border-radius: 100px;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+}
+#addVirtualIcon {
+    font-size: 100px;
+    line-height: 0px;
+    height: 0px;
+    width: 100px;
+}
+
+.menuVirtualAvatar {
+    height: 40px;
+    width: 40px;
+    justify-self: center;
+}
+
+.addVirtualPlayerMenuItem {
+    display: grid;
+    width: 100%;
+    grid-template-rows: 50px;
+    grid-template-columns: 50px auto;
+    align-items: center;
+    column-gap: 10px;
+}

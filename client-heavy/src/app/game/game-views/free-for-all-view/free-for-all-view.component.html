@@ -1,0 +1,35 @@
+<div id="view">
+    <div id="gameInfo" class="tour-gameInfo">
+        <div *ngIf="tutorial.isTutorial" class="tour-draw"></div>
+
+        <div class="left">
+            <div class="timer tour-timer">
+                <app-timer [game]="game"></app-timer>
+            </div>
+            <mat-card class="guess-info tour-guess-info" *ngIf="game.role !== role.Drawer">
+                <app-attempt [game]="game"></app-attempt>
+                <app-hint [game]="game"></app-hint>
+            </mat-card>
+            <div class="drawing-panel" *ngIf="game.role === role.Drawer">
+                <app-drawing-panel></app-drawing-panel>
+            </div>
+        </div>
+        <div class="middle">
+            <mat-card class="word tour-word" *ngIf="game.role === role.Drawer">{{ game.wordToGuess }}</mat-card>
+            <mat-card class="drawing-surface tour-drawing-surface">
+                <app-drawing-surface [isEditable]="game.role === role.Drawer"> </app-drawing-surface>
+            </mat-card>
+            <mat-card class="answer" *ngIf="game.role !== role.Drawer">
+                <app-guess-box [game]="game"></app-guess-box>
+            </mat-card>
+        </div>
+        <div class="right">
+            <div class="score tour-leaderboard">
+                <app-leaderboard></app-leaderboard>
+            </div>
+            <div class="chat">
+                <app-private-chat></app-private-chat>
+            </div>
+        </div>
+    </div>
+</div>

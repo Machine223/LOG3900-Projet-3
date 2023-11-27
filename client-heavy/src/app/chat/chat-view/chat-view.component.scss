@@ -1,0 +1,9 @@
+#sidenav-container {
+    width: 100%;
+    height: calc(100vh - 64px);
+}
+
+.chat-sidenav {
+    width: 350px;
+    user-select: none;
+}

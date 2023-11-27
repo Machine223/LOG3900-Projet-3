@@ -1,0 +1,13 @@
+.board {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    grid-gap: 16px;
+}
+
+app-leaderboard-item {
+    width: 100%;
+}

@@ -1,0 +1,12 @@
+<div class="wrapper" [ngClass]="{ error: isError, success: isSuccess }">
+    <mat-icon *ngIf="isError">error</mat-icon>
+
+    <mat-icon *ngIf="isSuccess">check_circle_outline</mat-icon>
+    <span class="content">
+        <span class="title"> {{ title }}</span> :
+        {{ content }}
+    </span>
+    <button class="button-dismiss" mat-icon-button (click)="onDismiss()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>

@@ -1,0 +1,27 @@
+<app-pre-gameroom-form
+    *ngIf="currentView === constants.PRE_GAMEROOM_FORM"
+    (wantsExit)="backToMenu()"
+    (gameModeChoice)="currentGameMode = $event"
+    (difficultyChoice)="currentDifficulty = $event"
+    (newNavigation)="currentView = $event"
+></app-pre-gameroom-form>
+<app-gameroom-list
+    *ngIf="currentView === constants.GAMEROOM && !gameroomManager.currentGameroom"
+    [difficulty]="currentDifficulty"
+    [gameMode]="currentGameMode"
+    (newNavigation)="currentView = $event"
+></app-gameroom-list>
+<app-game-lobby
+    *ngIf="currentView === constants.GAMEROOM && gameroomManager.currentGameroom && !gameManager.currentGame"
+    [gameroom]="gameroomManager.currentGameroom"
+></app-game-lobby>
+
+<app-sprint-view
+    *ngIf="currentView === constants.GAMEROOM && gameManager.currentGame && gameroomManager.currentGameroom.gameMode !== gameMode.Melee"
+    [game]="gameManager.currentGame"
+></app-sprint-view>
+
+<app-free-for-all-view
+    *ngIf="currentView === constants.GAMEROOM && gameManager.currentGame && gameroomManager.currentGameroom.gameMode === gameMode.Melee"
+    [game]="gameManager.currentGame"
+></app-free-for-all-view>

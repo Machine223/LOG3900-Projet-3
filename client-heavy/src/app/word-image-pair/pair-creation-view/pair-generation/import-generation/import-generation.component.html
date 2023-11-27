@@ -1,0 +1,7 @@
+<div id="importImageContainer">
+    <input style="display: none" type="file" (change)="selectFile($event)" accept="image/*" #fileInput />
+    <div id="imageContainer">
+        <img id="image" *ngIf="pairCreator.base64Image" [src]="pairCreator.base64Image" />
+    </div>
+    <button id="selectImageButton" (click)="fileInput.click()" mat-stroked-button>Select Image</button>
+</div>

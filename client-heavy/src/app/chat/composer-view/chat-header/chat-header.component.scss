@@ -1,0 +1,41 @@
+.titleNotGameView {
+    display: grid;
+    grid-template-columns: 24px auto 45px 30px;
+    height: 100%;
+    padding-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.titleNotGameViewDetached {
+    grid-template-columns: 24px auto 30px;
+}
+
+.titleGameView {
+    display: grid;
+    grid-template-columns: auto 30px;
+    height: 100%;
+    padding-bottom: 16px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+#composerChannelName {
+    font-weight: bold;
+    margin: 0;
+    padding-left: 10px;
+}
+
+#composerGameViewChannelName {
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.iconButton {
+    user-select: none;
+    cursor: pointer;
+}
+
+#backComposerButton {
+    align-self: center;
+}

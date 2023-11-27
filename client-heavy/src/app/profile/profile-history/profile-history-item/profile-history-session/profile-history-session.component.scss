@@ -1,0 +1,13 @@
+.sessionItem {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 30px auto;
+    align-items: center;
+}
+
+.signIn {
+    color: #43a047;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+

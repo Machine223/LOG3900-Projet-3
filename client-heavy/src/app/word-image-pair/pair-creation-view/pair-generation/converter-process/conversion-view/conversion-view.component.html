@@ -1,0 +1,52 @@
+<div id="conversionViewContainer">
+    <mat-spinner [diameter]="500" color="primary" *ngIf="imageConverter.isConverting"></mat-spinner>
+    <div id="conversionResultAndOption" *ngIf="!imageConverter.isConverting">
+        <div id="conversionOptions">
+            <div id="colorConversionOptions">
+                <div class="conversionOptionGroup">
+                    <h2 class="conversionParametersName">Stroke color</h2>
+                    <app-color-tool
+                        class="conversionParameter"
+                        [currentlySelectedColor]="primaryColor"
+                        [recentlyUsedColors]="recentlyUsedColors"
+                        (colorChanged)="onStrokeColorChange($event)"
+                    ></app-color-tool>
+                </div>
+                <div class="conversionOptionGroup">
+                    <h2 class="conversionParametersName">Background color</h2>
+                    <app-color-tool
+                        class="conversionParameter"
+                        [currentlySelectedColor]="drawingSurfaceColor"
+                        [recentlyUsedColors]="recentlyUsedColors"
+                        (colorChanged)="onDrawingSurfaceColorChange($event)"
+                    ></app-color-tool>
+                </div>
+            </div>
+            <div class="conversionOptionGroup">
+                <h2 class="conversionParametersName">Stroke width</h2>
+                <mat-slider
+                    class="conversionParameter conversionSlider"
+                    [max]="20"
+                    [min]="1"
+                    [thumbLabel]="true"
+                    [(ngModel)]="imageConverter.strokeWidth"
+                    (change)="strokeWidthChanged()"
+                >
+                </mat-slider>
+            </div>
+            <div class="conversionOptionGroup">
+                <h2 class="conversionParametersName">Size threshold</h2>
+                <mat-slider
+                    class="conversionParameter conversionSlider"
+                    [max]="1000"
+                    [min]="constants.PATH_MINIMAL_LENGHT"
+                    [thumbLabel]="true"
+                    [(ngModel)]="imageConverter.minimumLength"
+                    (change)="minLengthChanged()"
+                >
+                </mat-slider>
+            </div>
+        </div>
+        <app-drawing-surface id="conversionDrawingSurface" [isEditable]="false"></app-drawing-surface>
+    </div>
+</div>

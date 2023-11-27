@@ -1,0 +1,19 @@
+<div id="colorToolContainer">
+    <div class="colorTool">
+        <span class="colorLabel">Stroke</span>
+        <app-color-tool
+            [currentlySelectedColor]="primaryColor"
+            [recentlyUsedColors]="recentlyUsedColors"
+            (colorChanged)="onPrimaryColorChange($event)"
+        ></app-color-tool>
+    </div>
+
+    <div class="colorTool">
+        <span class="colorLabel">Background</span>
+        <app-color-tool
+            [currentlySelectedColor]="drawingSurfaceColor"
+            [recentlyUsedColors]="recentlyUsedColors"
+            (colorChanged)="onDrawingSurfaceColorChange($event)"
+        ></app-color-tool>
+    </div>
+</div>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
+    android:layout_gravity="center"
+    android:background="?attr/backgroundColor"
+    android:gravity="center_horizontal"
+    android:padding="20dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="?attr/colorPrimaryDark"
+        app:cardCornerRadius="4dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp">
+
+            <RelativeLayout
+                android:id="@+id/header_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/back_button_list"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/ic_baseline_keyboard_backspace_24" />
+
+                <TextView
+                    android:id="@+id/game_rooms_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/back_button_list"
+                    android:text="@string/gamerooms"
+                    android:textColor="?attr/textColor"
+                    android:textSize="32sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/parameters_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/header_container"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:id="@+id/game_mode_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="40dp"
+                    android:text="@string/game_mode"
+                    android:textColor="?attr/textColor"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/game_mode_name_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/game_mode_title"
+                    android:textColor="?attr/textColor"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/game_difficulty_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/game_mode_title"
+                    android:layout_alignStart="@+id/game_mode_title"
+                    android:text="@string/difficulty"
+                    android:textColor="?attr/textColor"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/game_difficulty_name_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/game_mode_name_text"
+                    android:layout_alignBottom="@+id/game_difficulty_title"
+                    android:layout_marginBottom="0dp"
+                    android:textColor="?attr/textColor"
+                    android:textSize="20sp" />
+
+            </RelativeLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/new_game_room_container"
+                android:layout_below="@+id/parameters_container"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:id="@+id/game_room_list_item_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/no_gamerooms_matching"
+                    android:orientation="vertical" />
+            </ScrollView>
+
+
+            <RelativeLayout
+                android:id="@+id/new_game_room_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true">
+
+                <EditText
+                    android:id="@+id/new_game_room_name_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@+id/new_game_room_button"
+                    android:background="@drawable/bordered_text"
+                    android:hint="@string/new_gameroom_name"
+                    android:imeOptions="actionGo"
+                    android:inputType="text"
+                    android:maxLength="15"
+                    android:padding="10dp"
+                    android:textColor="?attr/textColor"
+                    android:textColorHint="?attr/textColor"
+                    android:textSize="22sp" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/new_game_room_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="end|bottom"
+                    android:layout_margin="5dp"
+                    android:contentDescription="@string/add_gameroom_name_button"
+                    android:src="@drawable/ic_baseline_add_24"
+                    app:backgroundTint="@color/colorPrimaryDark"
+                    app:elevation="1dp"
+                    app:fabSize="normal"
+                    app:rippleColor="@color/yellow" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

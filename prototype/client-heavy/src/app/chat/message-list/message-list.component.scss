@@ -1,0 +1,10 @@
+.message-list {
+    height: 56vh;
+    overflow-y: auto;
+    padding: 0px 30px;
+    background-color: #f2f6fa;
+
+    .no-message {
+        margin: auto;
+    }
+}

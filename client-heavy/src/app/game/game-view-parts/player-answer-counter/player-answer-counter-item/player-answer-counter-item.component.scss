@@ -1,0 +1,57 @@
+.playerCounterContainer {
+    display: grid;
+    grid-gap: 16px;
+}
+
+.answerCounterItem {
+    display: grid;
+    width: 100%;
+    height: 30px;
+    height: fit-content;
+    grid-template-columns: 64px auto 50px 50px;
+    grid-template-rows: 100%;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 5px 10px 5px 0px;
+}
+
+.goodGuess {
+    color: #43a047;
+}
+
+.iconValue {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 24px;
+    align-items: center;
+    font-size: 16px;
+
+    .mat-icon {
+        font-size: 22px;
+    }
+}
+
+.answerValue {
+    justify-self: end;
+}
+
+.userId {
+    padding-left: 10px;
+}
+
+.myself {
+    font-weight: 500;
+}
+
+.guessAnimation {
+    position: absolute;
+    width: 302px;
+    height: 42px;
+    border-radius: 4px;
+}
+
+.answerCounterAvatar {
+    height: 32px;
+    width: 32px;
+    justify-self: center;
+}

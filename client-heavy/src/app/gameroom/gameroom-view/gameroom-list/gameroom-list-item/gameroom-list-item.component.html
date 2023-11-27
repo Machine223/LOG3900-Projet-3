@@ -1,0 +1,48 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title> {{ gameroom.name }} </mat-panel-title>
+
+        <mat-panel-description class="gameroomPanelInfo">
+            <span>{{ humanPlayers.length }}</span>
+            <mat-icon>person</mat-icon>
+            <span>{{ virtualPlayers.length }}</span>
+            <mat-icon>android</mat-icon>
+            <button (click)="joinGameroom($event)" *ngIf="gameroom.canBeJoined()" mat-raised-button color="primary">Join</button>
+            <button
+                (click)="disabledClick($event)"
+                *ngIf="!gameroom.canBeJoined() && !gameroom.isInGame"
+                [disabled]="true"
+                mat-raised-button
+                color="primary"
+            >
+                <span (click)="disabledClick($event)"> Full </span>
+            </button>
+            <button (click)="disabledClick($event)" *ngIf="gameroom.isInGame" [disabled]="true" mat-raised-button color="primary">
+                <span (click)="disabledClick($event)"> In game</span>
+            </button>
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <div class="gameroomContainer">
+        <div>
+            <h3 mat-subheader>Human players</h3>
+            <div *ngIf="humanPlayers.length === 0">No human players</div>
+            <div class="gameroomPlayerList">
+                <div class="playerListItem" *ngFor="let humanPlayer of humanPlayers">
+                    <app-avatar class="gameroomListAvatar" [user]="humanPlayer"></app-avatar>
+                    <span>{{ humanPlayer }}</span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h3 mat-subheader>Virtual players</h3>
+            <div *ngIf="virtualPlayers.length === 0">No virtual players</div>
+            <div class="gameroomPlayerList">
+                <div class="playerListItem" *ngFor="let virtualPlayer of virtualPlayers">
+                    <app-avatar class="gameroomListAvatar" [user]="virtualPlayer"></app-avatar>
+                    <span>{{ virtualPlayer }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-expansion-panel>

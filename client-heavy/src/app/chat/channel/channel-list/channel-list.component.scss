@@ -1,0 +1,66 @@
+#titleHeader {
+    display: grid;
+    grid-template-columns: auto 30px;
+    padding-bottom: 16px;
+    box-sizing: border-box;
+}
+
+#channelListHeader {
+    margin: 0;
+    font-weight: bold;
+}
+
+#channelList {
+    overflow: auto;
+}
+
+#searchField {
+    width: 100%;
+}
+
+#addChannelFooter {
+    display: grid;
+    grid-template-columns: auto 60px;
+    align-items: center;
+}
+
+#addChannelButton {
+    margin-bottom: 20px;
+    justify-self: center;
+}
+
+#channelView {
+    display: grid;
+    height: 100%;
+    box-sizing: border-box;
+    grid-template-rows: 50px 78px auto 78px;
+    padding: 20px 20px 0px 20px;
+}
+
+.iconButton {
+    user-select: none;
+    cursor: pointer;
+}
+
+.channelSubheader {
+    padding: 0px;
+    font-weight: bold;
+}
+
+app-channel-list-item {
+    box-sizing: content-box;
+    padding-right: 10px;
+    width: 100%;
+}
+
+mat-list-option {
+    border: 1px;
+}
+
+.channelDivider {
+    margin-bottom: 10px;
+}
+
+#newChannelFormField {
+    width: 100%;
+}

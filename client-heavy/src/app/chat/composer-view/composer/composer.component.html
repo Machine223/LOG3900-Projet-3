@@ -1,0 +1,23 @@
+<div class="composer">
+    <mat-form-field class="full-width" appearance="outline" style="margin-bottom: -1.25em">
+        <mat-label>Message</mat-label>
+        <textarea
+            #composer
+            id="composerArea"
+            matInput
+            placeholder="Type a message..."
+            [(ngModel)]="composedMessage"
+            autocomplete="off"
+            (keydown.enter)="onSend($event)"
+        ></textarea>
+        <mat-icon
+            matSuffix
+            id="sendIcon"
+            (click)="onSend($event)"
+            matTooltip="Send message"
+            matTooltipShowDelay="500"
+            matTooltipPosition="above"
+            >send</mat-icon
+        >
+    </mat-form-field>
+</div>

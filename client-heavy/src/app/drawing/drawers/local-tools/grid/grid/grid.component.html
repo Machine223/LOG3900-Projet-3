@@ -1,0 +1,8 @@
+<svg:g pointer-events="none">
+    <pattern id="gridPattern" patternUnits="userSpaceOnUse" [attr.width]="data.size" [attr.height]="data.size">
+        <svg:line stroke="black" [attr.stroke-opacity]="data.opacity" x1="0" y1="0" [attr.x2]="data.size" y2="0" />
+        <svg:line stroke="black" [attr.stroke-opacity]="data.opacity" x1="0" y1="0" x2="0" [attr.y2]="data.size" />
+    </pattern>
+
+    <svg:rect *ngIf="data.isVisible" fill="url(#gridPattern)" [attr.width]="width" [attr.height]="height" />
+</svg:g>

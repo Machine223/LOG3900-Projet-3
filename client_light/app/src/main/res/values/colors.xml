@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#009688</color>
+    <color name="colorPrimaryDark">#fafafa</color>
+    <color name="colorPrimaryContrast">#20000000</color>
+    <color name="colorAccent">#E0E0E0</color>
+    <color name="colorFormBackground">#FFF</color>
+    <color name="colorBackground">#eaebef</color>
+    <color name="colorSecondary">#2962FF</color>
+    <color name="colorSecondaryVariant">#0039CB</color>
+    <color name="colorOnSecondary">#FFFFFF</color>
+    <color name="colorError">#F44336</color>
+    <color name="colorOnError">#FFFFFF</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorOnSurface">#212121</color>
+    <color name="colorOnBackground">#212121</color>
+    <color name="colorButton">#2196F3</color>
+    <color name="colorToggledButton">#C39EF6</color>
+    <color name="colorUntoggledButton">#EEEEEE</color>
+    <color name="colorBackgroundNavbar">#009688</color>
+    <color name="textColor">#000000</color>
+    <color name="textColorDisabled">#dcdcdc</color>
+    <color name="purple">#009688</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="grey">#E0E0E0</color>
+    <color name="yellow">#ffd740</color>
+    <color name="green">#00FF00</color>
+    <color name="red">#ff5050</color>
+</resources>

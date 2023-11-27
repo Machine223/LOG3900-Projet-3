@@ -1,0 +1,18 @@
+<div class="playerCounterContainer">
+    <div class="guessAnimation" [@goodGuess]="newGoodGuess ? 'event' : 'calm'"></div>
+    <div class="guessAnimation" [@badGuess]="newBadGuess ? 'event' : 'calm'"></div>
+    <div class="answerCounterItem">
+        <app-avatar class="answerCounterAvatar" [user]="user"></app-avatar>
+        <div class="userId" [class.myself]="isMyself">
+            {{ user }}
+        </div>
+        <div class="iconValue">
+            <div class="answerValue primary-color">{{ nGoodGuess }}</div>
+            <mat-icon class="goodGuess">done</mat-icon>
+        </div>
+        <div class="iconValue">
+            <div class="answerValue primary-color">{{ nBadGuess }}</div>
+            <mat-icon class="warn-color">close</mat-icon>
+        </div>
+    </div>
+</div>

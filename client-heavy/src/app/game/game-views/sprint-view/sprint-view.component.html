@@ -1,0 +1,27 @@
+<div id="view">
+    <div id="gameInfo">
+        <div class="left">
+            <div>
+                <app-timer [game]="game"></app-timer>
+            </div>
+            <mat-card>
+                <app-attempt [game]="game"></app-attempt>
+                <app-hint [game]="game"></app-hint>
+            </mat-card>
+        </div>
+        <div class="middle">
+            <mat-card class="drawing-surface">
+                <app-drawing-surface [isEditable]="false"> </app-drawing-surface>
+            </mat-card>
+            <mat-card>
+                <app-guess-box [game]="game"></app-guess-box>
+            </mat-card>
+        </div>
+
+        <div class="right">
+            <app-scoreboard [score]="game.score"></app-scoreboard>
+            <app-player-answer-counter></app-player-answer-counter>
+            <app-private-chat></app-private-chat>
+        </div>
+    </div>
+</div>

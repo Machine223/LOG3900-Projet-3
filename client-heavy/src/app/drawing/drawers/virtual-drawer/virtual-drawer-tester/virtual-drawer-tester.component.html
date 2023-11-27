@@ -1,0 +1,25 @@
+<mat-card id="virtualDrawerTesterView">
+    <div>
+        <mat-icon id="exitVirtualDrawerTesterButton" (click)="backToMainMenu()">keyboard_backspace</mat-icon>
+        <h1 id="virtualDrawerTesterTitle">Virtual drawer tester</h1>
+    </div>
+    <div id="virtualDrawerFormAndPreview">
+        <div id="virtualDrawerForm">
+            <h3>Virtual drawer delay</h3>
+            <mat-slider thumbLabel min="1" max="500" step="1" [(ngModel)]="delay"></mat-slider>
+            <mat-form-field appearance="outline">
+                <mat-label>Pair title</mat-label>
+                <input matInput [(ngModel)]="pairToSearch" />
+            </mat-form-field>
+            <button type="button" (click)="searchPair()" [disabled]="pairToSearch.trim().length === 0" mat-raised-button color="primary">
+                Search pair
+            </button>
+            <mat-selection-list [multiple]="false" [disableRipple]="false" *ngIf="foundPairs.length !== 0">
+                <mat-list-option role="listitem" *ngFor="let pair of foundPairs" (click)="previewPair(pair)">{{
+                    pair.word
+                }}</mat-list-option>
+            </mat-selection-list>
+        </div>
+        <app-drawing-surface [isEditable]="false"></app-drawing-surface>
+    </div>
+</mat-card>

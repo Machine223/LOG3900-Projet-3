@@ -1,0 +1,17 @@
+#statsContainer {
+    display: grid;
+    height: 429px;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+}
+
+#statsPresenter {
+    display: grid;
+    width: fit-content;
+    grid-template-columns: auto;
+}
+
+mat-form-field {
+    width: 480px;
+}

@@ -1,0 +1,81 @@
+//onOffSwitch by https://proto.io/freebies/onoff/
+.onOffSwitch {
+    position: relative;
+    width: 90px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    margin: auto;
+}
+
+.onOffSwitch-checkbox {
+    display: none;
+}
+
+.onOffSwitch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #999999;
+    border-radius: 20px;
+}
+
+.onOffSwitch-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+
+.onOffSwitch-inner:before,
+.onOffSwitch-inner:after {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 30px;
+    padding: 0;
+    line-height: 30px;
+    font-size: 14px;
+    color: white;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.onOffSwitch-inner:before {
+    content: 'ACTIF';
+    padding-left: 13px;
+    background-color: #34c23c;
+    color: #ffffff;
+    text-align: left;
+}
+
+.onOffSwitch-inner:after {
+    content: 'INACTIF';
+    padding-right: 4px;
+    background-color: #eeeeee;
+    color: #999999;
+    text-align: right;
+}
+
+.onOffSwitch-switch {
+    display: block;
+    width: 18px;
+    margin: 6px;
+    background: #ffffff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 56px;
+    border: 2px solid #999999;
+    border-radius: 20px;
+    transition: all 0.3s ease-in 0s;
+}
+
+.onOffSwitch-checkbox:checked + .onOffSwitch-label .onOffSwitch-inner {
+    margin-left: 0;
+}
+
+.onOffSwitch-checkbox:checked + .onOffSwitch-label .onOffSwitch-switch {
+    right: 0px;
+}

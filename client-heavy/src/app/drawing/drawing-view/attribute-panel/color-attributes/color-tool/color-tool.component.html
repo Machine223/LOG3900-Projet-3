@@ -1,0 +1,105 @@
+<div (mouseleave)="timeClosing()" (mouseenter)="preventClosing()">
+    <div class="background-button">
+        <button
+            mat-stroked-button
+            class="showPrimaryColor"
+            [style.background-color]="currentlySelectedColor.getStyle()"
+            (click)="togglePicker()"
+        ></button>
+    </div>
+    <mat-card *ngIf="showDropDown" class="dropdown">
+        <div *ngIf="!showCustom" class="quickSelectContainer">
+            <div class="dropdownTitle">Quick select</div>
+            <app-color-choices (presetChosen)="onQuickColorSelected($event)"></app-color-choices>
+            <div class="dropdownTitle recentlyUsedTitle" *ngIf="recentlyUsedColors.length >= 1">Recently used</div>
+            <div *ngIf="recentlyUsedColors.length >= 1">
+                <div id="usedColorContainer">
+                    <div class="background-button" *ngFor="let item of recentlyUsedColors">
+                        <button
+                            mat-stroked-button
+                            [style.background-color]="item.getStyle()"
+                            (click)="onQuickColorSelected(item)"
+                            class="usedColors"
+                        ></button>
+                    </div>
+                </div>
+            </div>
+            <button mat-stroked-button (click)="wantsCustom()">Custom color</button>
+        </div>
+        <div *ngIf="showCustom" class="customContainer">
+            <div>
+                <mat-icon class="backToPreset" (click)="wantsPreset()">west</mat-icon>
+                <div id="colorCanvas">
+                    <app-colors-canvas [primaryColor]="canvasMainColor" (chosenColor)="onNewColor($event)"></app-colors-canvas>
+                </div>
+                <form [formGroup]="userRgb" (ngSubmit)="ngSubmit()" class="manualValuesForm">
+                    <div id="manualValues">
+                        <mat-form-field class="colorField">
+                            <mat-label>Red</mat-label>
+                            <span matPrefix>0x &nbsp;</span>
+                            <input
+                                matInput
+                                type="text"
+                                maxlength="2"
+                                class="rgbValue"
+                                formControlName="rValue"
+                                (keydown)="onKeyPress($event)"
+                                [ngModel]="temporaryColor.r.toUpperCase()"
+                                (ngModelChange)="temporaryColor.r = $event"
+                            />
+                        </mat-form-field>
+                        <mat-form-field class="colorField">
+                            <mat-label>Green</mat-label>
+                            <span matPrefix>0x &nbsp;</span>
+                            <input
+                                matInput
+                                type="text"
+                                maxlength="2"
+                                class="rgbValue"
+                                formControlName="gValue"
+                                (keydown)="onKeyPress($event)"
+                                [ngModel]="temporaryColor.g.toUpperCase()"
+                                (ngModelChange)="temporaryColor.g = $event"
+                            />
+                        </mat-form-field>
+                        <mat-form-field class="colorField">
+                            <mat-label>Blue</mat-label>
+                            <span matPrefix>0x &nbsp;</span>
+                            <input
+                                matInput
+                                type="text"
+                                maxlength="2"
+                                class="rgbValue"
+                                formControlName="bValue"
+                                (keydown)="onKeyPress($event)"
+                                [ngModel]="temporaryColor.b.toUpperCase()"
+                                (ngModelChange)="temporaryColor.b = $event"
+                            />
+                        </mat-form-field>
+                    </div>
+                    <div *ngIf="userRgb.invalid" class="errorMessage">Values must be between 00 and FF</div>
+                    <div *ngIf="!userRgb.invalid"></div>
+                </form>
+                <div>
+                    <div id="opacitySlider">
+                        <span>Opacity</span>
+                        <mat-slider
+                            #colorPickerSlider
+                            step="0.01"
+                            min="0"
+                            max="1"
+                            [ngModel]="temporaryColor.a"
+                            (input)="temporaryColor.a = colorPickerSlider.value"
+                        ></mat-slider>
+                        {{ temporaryColor.a * 100 | number: '1.0-0' }}%
+                    </div>
+                </div>
+            </div>
+            <div id="tempColor">
+                <div class="backgroundTemp">
+                    <div class="temporaryColor" [style.background-color]="getTemporaryColor()"></div>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+</div>

@@ -1,0 +1,48 @@
+#view {
+    display: grid;
+    justify-self: center;
+    height: 100%;
+}
+
+#gameInfo {
+    display: grid;
+    grid-template-columns: 334px 700px 334px;
+    grid-template-rows: 100%;
+    margin: auto;
+    height: 816px;
+    width: fit-content;
+    grid-gap: 16px;
+
+    .right,
+    .left,
+    .middle {
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr);
+        height: 100%;
+        grid-gap: 16px;
+    }
+}
+
+.drawing-surface {
+    padding: 0 !important;
+    height: min-content;
+}
+
+.word {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.tour-draw {
+    top: 178px;
+    position: absolute;
+    width: 1058px;
+    height: 716px;
+    pointer-events: none;
+}

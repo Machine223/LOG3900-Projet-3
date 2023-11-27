@@ -1,0 +1,17 @@
+<app-pair-information
+    *ngIf="currentMode === constants.INFORMATION_MODE"
+    (wantsGenerate)="currentMode = constants.GENERATION_MODE"
+    (wantsEdit)="currentMode = constants.EDIT_MODE"
+    (wantsPreview)="currentMode = constants.PREVIEW_MODE"
+    (wantsExit)="returnToMenu()"
+></app-pair-information>
+<app-pair-generation
+    *ngIf="currentMode === constants.GENERATION_MODE"
+    (creationFinished)="currentMode = constants.INFORMATION_MODE"
+></app-pair-generation>
+<app-manual-generation
+    *ngIf="currentMode === constants.EDIT_MODE"
+    [isEdit]="true"
+    (creationFinished)="currentMode = constants.INFORMATION_MODE"
+></app-manual-generation>
+<app-pair-preview *ngIf="currentMode === constants.PREVIEW_MODE" (wantsExit)="currentMode = constants.INFORMATION_MODE"></app-pair-preview>

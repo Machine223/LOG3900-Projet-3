@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+    <span>Draw Me a Picture</span>
+    <span class="spacer"></span>
+    <span class="username">{{ username }}</span>
+    <button mat-icon-button matTooltip="See profile" matTooltipShowDelay="500" class="item" (click)="onProfileSelect()">
+        <div class="avatar">
+            <app-avatar [user]="username"></app-avatar>
+        </div>
+    </button>
+    <button mat-icon-button matTooltip="Toggle sound" matTooltipShowDelay="500" class="item" (click)="onMuteToggle()">
+        <mat-icon *ngIf="!soundPlayer.isMuted">volume_up</mat-icon>
+        <mat-icon *ngIf="soundPlayer.isMuted">volume_off</mat-icon>
+    </button>
+    <button *ngIf="!this.chatWindow.isDetached" matTooltip="Toggle chat" matTooltipShowDelay="500" mat-icon-button (click)="onChatToggle()">
+        <mat-icon
+            matBadge="&#8288;"
+            [matBadgeHidden]="channelManager.unreadChannels.size === 0"
+            matBadgeColor="warn"
+            matBadgeOverlap="true"
+            matBadgeSize="small"
+            >chat</mat-icon
+        >
+    </button>
+</mat-toolbar>

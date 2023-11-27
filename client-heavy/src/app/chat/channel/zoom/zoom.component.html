@@ -1,0 +1,24 @@
+<div class="wrapper">
+    <div>
+        <mat-slide-toggle [checked]="isVoiceChat" (change)="onToggleChange($event)" color="primary" labelPosition="before"
+            >Voice Chat
+        </mat-slide-toggle>
+    </div>
+
+    <div>
+        <button *ngIf="!isVoiceChat" [disableRipple]="true" mat-button disabled>
+            <mat-icon>mic_off</mat-icon>
+        </button>
+
+        <button *ngIf="isVoiceChat" mat-stroked-button [matMenuTriggerFor]="menu">
+            {{ users.length }}
+            <mat-icon>mic</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button class="mat-menu-item" *ngFor="let user of users" [disableRipple]="true" mat-menu-item>
+                <app-avatar [user]="user"></app-avatar>
+                <h2>{{ user }}</h2>
+            </button>
+        </mat-menu>
+    </div>
+</div>

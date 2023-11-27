@@ -1,0 +1,35 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "editor.detectIndentation": false,
+        "prettier.printWidth": 140,
+        "prettier.useTabs": false,
+        "prettier.tabWidth": 4,
+        "prettier.trailingComma": "all",
+        "prettier.arrowParens": "always",
+        "prettier.disableLanguages": [],
+        "prettier.singleQuote": true,
+        "prettier.endOfLine": "lf",
+        "prettier.bracketSpacing": true,
+        "prettier.semi": true,
+        "[javascript]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[html]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[typescript]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[json]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "cSpell.words": [
+            "typedi"
+        ]
+    }
+}

@@ -1,0 +1,10 @@
+<button
+    mat-stroked-button
+    id="button"
+    [ngClass]="{ 'accent-background': isCurrentlySelected }"
+    (click)="onClick()"
+    [disabled]="isDisabled"
+    [class.disabledButton]="isDisabled"
+>
+    <mat-icon>{{ imageUrl }}</mat-icon>
+</button>

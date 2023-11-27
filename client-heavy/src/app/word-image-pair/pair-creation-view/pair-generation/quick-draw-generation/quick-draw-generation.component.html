@@ -1,0 +1,66 @@
+<mat-card id="quickDrawGenerationCard">
+    <div id="quickDrawContainer">
+        <div id="quickDrawOptions">
+            <div class="quickDrawOptionGroup">
+                <h2 class="quickDrawParametersName">Stroke color</h2>
+                <app-color-tool
+                    [currentlySelectedColor]="primaryColor"
+                    [recentlyUsedColors]="recentlyUsedColors"
+                    (colorChanged)="onStrokeColorChange($event)"
+                ></app-color-tool>
+            </div>
+            <div class="quickDrawOptionGroup">
+                <h2 class="quickDrawParametersName">Background color</h2>
+                <app-color-tool
+                    [currentlySelectedColor]="drawingSurfaceColor"
+                    [recentlyUsedColors]="recentlyUsedColors"
+                    (colorChanged)="onDrawingSurfaceColorChange($event)"
+                ></app-color-tool>
+            </div>
+            <div class="quickDrawOptionGroup">
+                <h2 class="quickDrawParametersName">Stroke width</h2>
+                <mat-slider
+                    [max]="20"
+                    [min]="1"
+                    [thumbLabel]="true"
+                    [(ngModel)]="quickDrawManager.strokeWidth"
+                    (change)="strokeWidthChanged()"
+                >
+                </mat-slider>
+            </div>
+            <div id="quickDrawSaveButtons">
+                <button mat-stroked-button (click)="cancelClicked()">Cancel</button>
+                <button mat-raised-button color="primary" (click)="saveClicked()">
+                    <mat-icon>save</mat-icon>
+                    Save
+                </button>
+            </div>
+        </div>
+        <div id="quickDrawItems">
+            <h1 class="quickDrawTitle">{{ quickDrawManager.currentTitle }}</h1>
+            <div id="quickDrawSurface">
+                <button
+                    mat-stroked-button
+                    [disabled]="!quickDrawManager.hasPrevious"
+                    (click)="previousAsked()"
+                    matTooltip="Previous image"
+                    matTooltipShowDelay="500"
+                    matTooltipPosition="above"
+                >
+                    <mat-icon>west</mat-icon>
+                </button>
+                <app-drawing-surface></app-drawing-surface>
+                <button
+                    mat-stroked-button
+                    [disabled]="!quickDrawManager.hasNext"
+                    (click)="nextAsked()"
+                    matTooltip="Next image"
+                    matTooltipShowDelay="500"
+                    matTooltipPosition="above"
+                >
+                    <mat-icon>east</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+</mat-card>

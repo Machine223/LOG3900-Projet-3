@@ -1,0 +1,93 @@
+/* You can add global styles to this file, and also import other style files */
+// Lato font family
+@font-face {
+    font-family: product;
+    font-weight: normal;
+    font-style: normal;
+    src: url("assets/fonts/product/Product\ Sans\ Regular.ttf");
+}
+
+@font-face {
+    font-family: product;
+    font-weight: normal;
+    font-style: italic;
+    src: url("assets/fonts/product/Product\ Sans\ Italic.ttf");
+}
+
+@font-face {
+    font-family: product;
+    font-weight: bold;
+    font-style: normal;
+    src: url("assets/fonts/product/Product\ Sans\ Bold.ttf");
+}
+
+@font-face {
+    font-family: product;
+    font-weight: bold;
+    font-style: italic;
+    src: url("assets/fonts/product/Product\ Sans\ Bold\ Italic.ttf");
+}
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+img,
+strong,
+ol,
+ul,
+li,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+html {
+    height: 100%;
+    font-family: "product", Arial, Helvetica, sans-serif;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.form-control {
+    display: block;
+    width: 330px;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #315375;
+    background-color: rgb(255, 255, 255);
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .35rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.row{
+    display: flex;
+    margin-left: -150px;
+    margin-right: -10px;
+    margin-top: 30px;
+    
+}

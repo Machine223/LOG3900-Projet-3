@@ -1,0 +1,31 @@
+@mixin colors($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, warn);
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+
+    .primary-background {
+        background-color: mat-color($primary);
+    }
+
+    .primary-border {
+        border: solid 4px mat-color($primary);
+    }
+
+    .accent-background {
+        background-color: mat-color($accent);
+    }
+
+    .warn-background {
+        background-color: mat-color($warn);
+    }
+
+    .background-background {
+        background-color: mat-color($background);
+    }
+
+    .warn-color {
+        color: mat-color($warn);
+    }
+}

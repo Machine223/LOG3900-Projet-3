@@ -1,0 +1,28 @@
+#importImageStep {
+    display: grid;
+    grid-template-rows: auto auto;
+    height: 100%;
+}
+
+.nextButton {
+    width: fit-content;
+    justify-self: end;
+}
+
+.previousButton {
+    width: fit-content;
+    justify-self: start;
+}
+
+.stepButtons {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+mat-horizontal-stepper {
+    height: 100%;
+}
+
+.stepperContent {
+    height: 800px;
+}

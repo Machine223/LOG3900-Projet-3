@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="preGameroomWrapper">
+        <mat-card id="preGameroomForm" class="tour-preGameroomForm">
+            <div>
+                <mat-icon id="exitGameParameterButton" (click)="backToMenu()">keyboard_backspace</mat-icon>
+                <h1 id="gameParametersTitle">Game parameters</h1>
+    
+                <div id="gameParameterForm">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Mode</mat-label>
+                        <mat-select [(value)]="currentGameMode">
+                            <mat-option [value]="0">Free-for-all</mat-option>
+                            <mat-option [disabled]="tutorial.isTutorial" [value]="1">Sprint solo</mat-option>
+                            <mat-option [disabled]="tutorial.isTutorial" [value]="2">Sprint coop</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+    
+                    <mat-form-field appearance="outline">
+                        <mat-label>Difficulty</mat-label>
+                        <mat-select [(value)]="currentDifficulty">
+                            <mat-option [value]="0">Easy</mat-option>
+                            <mat-option [value]="1" [disabled]="tutorial.isTutorial">Moderate</mat-option>
+                            <mat-option [value]="2" [disabled]="tutorial.isTutorial">Hard</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <button type="button" (click)="formCompleted()" mat-flat-button color="primary">Find gamerooms</button>
+        </mat-card>
+    </div>
+</div>

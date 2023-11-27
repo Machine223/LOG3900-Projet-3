@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingHorizontal="@dimen/message_full_wrapper_padding">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:gravity="end"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/message_wrapper_padding_h"
+        android:paddingVertical="@dimen/message_wrapper_padding_v">
+
+        <TextView
+            android:id="@+id/messageContentView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/message_content_margin"
+            android:background="@drawable/text_box"
+            android:backgroundTint="@color/message_self"
+            android:padding="@dimen/message_content_padding"
+            android:textColor="@color/message_text_self" />
+
+        <TextView
+            android:id="@+id/messageTimestampView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/message_timestamp_text_size" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <RelativeLayout
+        android:id="@+id/colors_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tool_color_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:text="Stroke color:"
+            android:textColor="?attr/textColor"
+            android:textSize="16sp" />
+
+        <View
+            android:id="@+id/tool_color_picker_button"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@+id/tool_color_text"
+            android:layout_marginBottom="1dp"
+            android:layout_toEndOf="@+id/tool_color_text"
+            android:background="@drawable/color_square" />
+
+        <TextView
+            android:id="@+id/background_color_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tool_color_text"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:text="Background color:"
+            android:textColor="?attr/textColor"
+            android:textSize="16sp" />
+
+        <View
+            android:id="@+id/background_color_picker_button"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@+id/background_color_text"
+            android:layout_toEndOf="@+id/background_color_text"
+            android:background="@drawable/color_square" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/colors_container"
+        android:layout_marginTop="20dp">
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggler_group"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="30dp"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <Button
+                android:id="@+id/pencil_button"
+                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:tooltipText="Pencil"
+                app:backgroundTint="?attr/colorPrimaryDark"
+                app:icon="@drawable/pencil_icon"
+                app:iconTint="?attr/colorPrimary" />
+
+            <Button
+                android:id="@+id/eraser_button"
+                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tooltipText="Eraser"
+                app:backgroundTint="?attr/colorPrimaryDark"
+                app:icon="@drawable/eraser_icon"
+                app:iconTint="?attr/colorPrimary" />
+
+            <Button
+                android:id="@+id/grid_toggle_button"
+                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tooltipText="Grid"
+                app:backgroundTint="?attr/colorPrimaryDark"
+                app:icon="@drawable/ic_baseline_grid_on_24"
+                app:iconTint="?attr/colorPrimary" />
+
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <RelativeLayout
+            android:id="@+id/undo_redo_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/toggler_group">
+
+            <Button
+                android:id="@+id/undo_button"
+                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:tooltipText="Undo"
+                app:icon="@drawable/undo_icon"
+                app:iconTint="?android:textColorPrimary"
+                app:backgroundTint="?attr/colorPrimaryDark"
+                android:enabled="false"/>
+
+            <Button
+                android:id="@+id/redo_button"
+                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_toEndOf="@+id/undo_button"
+                android:tooltipText="Redo"
+                app:backgroundTint="?attr/colorPrimaryDark"
+                app:icon="@drawable/redo_icon"
+                app:iconTint="?android:textColorPrimary"
+                android:enabled="false"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/size_slider_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toggler_group"
+            android:layout_marginTop="3dp"
+            android:paddingTop="10dp"
+            android:text="Stroke width"
+            android:textAlignment="center"
+            android:textColor="?attr/textColor"
+            android:textSize="16sp"
+            android:visibility="visible" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/size_slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/size_slider_text"
+            android:stepSize="1"
+            android:valueFrom="1"
+            android:valueTo="100"
+            android:visibility="visible"
+            app:thumbColor="?attr/textColor"
+            app:trackColorInactive="@color/grey" />
+
+        <LinearLayout
+            android:id="@+id/grid_toggle_wrapper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toggler_group"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/grid_toggle_switch"
+                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/toggle_grid"
+                android:textColor="?attr/textColor"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/grid_buttons_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/grid_toggle_wrapper"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/grid_opacity"
+                android:textAlignment="center"
+                android:textColor="?attr/textColor"
+                android:textSize="16sp" />
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/grid_opacity_slider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:value="1.0"
+                android:valueFrom="0.0"
+                android:valueTo="1.0"
+                app:thumbColor="?attr/textColor"
+                app:trackColorInactive="@color/grey" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/grid_width"
+                android:textAlignment="center"
+                android:textColor="?attr/textColor"
+                android:textSize="16sp" />
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/grid_width_slider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:value="50.0"
+                android:valueFrom="20.0"
+                android:valueTo="200.0"
+                app:thumbColor="?attr/textColor"
+                app:trackColorInactive="@color/grey" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

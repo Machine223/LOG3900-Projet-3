@@ -1,0 +1,35 @@
+#view {
+    display: grid;
+    justify-self: center;
+    height: 100%;
+}
+
+#gameInfo {
+    display: grid;
+    grid-template-columns: 334px 700px 334px;
+    grid-template-rows: 806px;
+    margin: auto;
+    height: fit-content;
+    width: fit-content;
+    column-gap: 16px;
+
+    .left,
+    .middle {
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr);
+        height: 100%;
+        grid-gap: 16px;
+    }
+
+    .right {
+        display: grid;
+        grid-template-rows: auto auto minmax(0, 1fr);
+        height: 100%;
+        grid-gap: 16px;
+    }
+}
+
+.drawing-surface {
+    padding: 0 !important;
+    height: min-content;
+}

@@ -1,0 +1,50 @@
+.composer {
+    height: 64px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow: auto;
+    background-color: #ffffff;
+    border-radius: 40px;
+    padding: 4px 32px;
+
+    .compose-area {
+        font-family: "product", Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        width: 75%;
+        height: 24px;
+        display: block;
+        border: none;
+        resize: none;
+        border-radius: 32px;
+        margin-right: 24px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .button-send {
+        border: none;
+        background: #fff;
+        border-radius: 31px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        flex-shrink: 0;
+        padding: 0;
+
+        &:focus {
+            outline: none;
+        }
+
+        .send-logo {
+            width: 24px;
+            height: 24px;
+            padding-left: 4px;
+        }
+    }
+}

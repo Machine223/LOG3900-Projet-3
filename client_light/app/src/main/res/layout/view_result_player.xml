@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+
+    <ca.polymtl.project.client.profile.AvatarView
+        android:id="@+id/avatar_view"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true" />
+
+    <TextView
+        android:id="@+id/username_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/avatar_view"
+        android:padding="5dp"
+        android:text="TEST"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+
+    <TextView
+        android:id="@+id/score_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:text="20pts"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+
+    <TextView
+        android:id="@+id/answer_success_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:layout_toStartOf="@+id/answer_attempts_user"
+        android:drawablePadding="5dp"
+        android:text="0"
+        android:textColor="?attr/backgroundNavbar"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:drawableEndCompat="@drawable/ic_baseline_check_24_green" />
+
+    <TextView
+        android:id="@+id/answer_attempts_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:drawablePadding="5dp"
+        android:text="0"
+        android:textColor="?attr/backgroundNavbar"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:drawableEndCompat="@drawable/ic_baseline_close_24_red" />
+
+
+</RelativeLayout>

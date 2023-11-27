@@ -1,0 +1,44 @@
+<div id="lobbyContainer">
+    <mat-card id="lobbyInfo" class="tour-lobbyInfo">
+        <button id="leaveGameroomButton" (click)="leaveGameroom()" mat-flat-button>
+            <mat-icon [inline]="true">keyboard_backspace</mat-icon>
+            <span id="leaveText">Leave</span>
+        </button>
+        <h1 id="lobbyName">{{ gameroom.name }}</h1>
+        <div id="gameParameters">
+            <span class="parameterTitle">Mode</span>
+            <span class="parameterField">{{ gameModeStringConverter.get(gameroom.gameMode) }}</span>
+            <span class="parameterTitle">Difficulty</span>
+            <span class="parameterField">{{ difficultyStringConverter.get(gameroom.difficulty) }}</span>
+        </div>
+        <div id="lobbyPlayers">
+            <app-lobby-player
+                *ngFor="let player of gameroom.users"
+                [playerName]="player"
+                (deleteVirtualPlayer)="removeVirtualPlayer($event)"
+            ></app-lobby-player>
+            <app-lobby-add-virtual
+                *ngIf="gameroom.canAddVirtualPlayer()"
+                [gameroom]="gameroom"
+                (addVirtualPlayer)="addVirtualPlayer($event)"
+            ></app-lobby-add-virtual>
+        </div>
+        <div id="startButtonAndCondition">
+            <div id="gameRoomConditions" class="tour-gameRoomConditions">
+                <div class="gameroomCondition">Maximum: {{ getMaximumString() }}</div>
+                <div class="gameroomCondition" [class.incorrect]="!gameroom.canStartGame()">Required: {{ getRequiredString() }}</div>
+            </div>
+            <button
+                id="startGameButton"
+                class="tour-startGameButton"
+                [disabled]="!gameroom.canStartGame()"
+                (click)="startGame()"
+                mat-raised-button
+                color="primary"
+            >
+                <span id="leaveText">Start Game</span>
+            </button>
+        </div>
+    </mat-card>
+    <app-private-chat></app-private-chat>
+</div>

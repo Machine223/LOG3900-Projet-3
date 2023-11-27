@@ -1,0 +1,9 @@
+<app-channel-list [isDetached]="true" *ngIf="!channelManager.currentlySelectedChannel">
+</app-channel-list>
+<app-channel
+    *ngIf="channelManager.currentlySelectedChannel"
+    [selectedChannel]="channelManager.currentlySelectedChannel" 
+    [isGameView]="false"
+    [isDetached]="true"
+>
+</app-channel>

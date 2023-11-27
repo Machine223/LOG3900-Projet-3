@@ -1,0 +1,9 @@
+<mat-card id="privateChat">
+    <app-channel
+        id="lobbyChannelView"
+        *ngIf="channelManager.currentGameChannel"
+        [selectedChannel]="channelManager.currentGameChannel"
+        [isGameView]="true"
+    ></app-channel>
+    <mat-spinner *ngIf="!channelManager.currentGameChannel"></mat-spinner>
+</mat-card>

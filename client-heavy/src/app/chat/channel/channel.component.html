@@ -1,0 +1,6 @@
+<div class="chat" [ngClass]="{ 'in-game-view': isGameView }">
+    <app-chat-header *ngIf="!isGameView" [channel]="selectedChannel" [isDetached]="isDetached"></app-chat-header>
+    <app-zoom [channel]="selectedChannel"></app-zoom>
+    <app-message-list [channel]="selectedChannel"></app-message-list>
+    <app-composer (newMessage)="sendNewMessage($event)"></app-composer>
+</div>

@@ -1,0 +1,15 @@
+{
+	"gamerooms": [
+		{
+			"gameroomName": "Game 0",
+			"gameMode": 0,
+			"difficulty": 0,
+			"users": [
+				"Tutorial",
+				"Tutorial",
+				"Virtual Simon"
+			],
+			"isInGame": true
+		}
+	]
+}

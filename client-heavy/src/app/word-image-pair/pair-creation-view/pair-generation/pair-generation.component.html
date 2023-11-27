@@ -1,0 +1,10 @@
+<app-manual-generation
+    *ngIf="pairCreator.creationMode === 0"
+    (creationFinished)="creationFinished.emit()"
+    [isEdit]="false"
+></app-manual-generation>
+<app-converter-process
+    *ngIf="pairCreator.creationMode === 1 || pairCreator.creationMode === 3"
+    (creationFinished)="creationFinished.emit()"
+></app-converter-process>
+<app-quick-draw-generation *ngIf="pairCreator.creationMode === 2" (creationFinished)="creationFinished.emit()"></app-quick-draw-generation>

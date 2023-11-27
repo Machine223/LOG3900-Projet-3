@@ -1,0 +1,15 @@
+<div id="cropperAndPreview">
+    <image-cropper
+        [imageBase64]="base64Image"
+        [maintainAspectRatio]="true"
+        [aspectRatio]="1 / 1"
+        [resizeToWidth]="700"
+        [cropperMinWidth]="128"
+        [onlyScaleDown]="false"
+        [roundCropper]="false"
+        [alignImage]="'left'"
+        format="png"
+        (imageCropped)="imageCropped($event)"
+    ></image-cropper>
+    <img id="imagePreview" *ngIf="pairCreator.base64CroppedImage" [src]="pairCreator.base64CroppedImage" />
+</div>

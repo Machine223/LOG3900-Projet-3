@@ -1,0 +1,40 @@
+<div id="onlineSearchContainer">
+    <mat-form-field id="searchBox" appearance="outline">
+        <mat-label>Search online</mat-label>
+        <input matInput placeholder="Image to search" [disabled]="isWaiting" [(ngModel)]="wordToSearch" (keydown.enter)="launchSearch()" />
+    </mat-form-field>
+    <mat-spinner *ngIf="shownImageLinks.length === 0 && isWaiting"></mat-spinner>
+    <div id="onlineImageSelection" *ngIf="shownImageLinks.length !== 0">
+        <button
+            class="onlineImageButtons"
+            mat-stroked-button
+            [disabled]="!hasPrevious || isWaiting"
+            (click)="previousAsked()"
+            matTooltip="Previous images"
+            matTooltipShowDelay="500"
+            matTooltipPosition="above"
+        >
+            <mat-icon>west</mat-icon>
+        </button>
+        <mat-spinner *ngIf="isWaiting"></mat-spinner>
+        <div id="imageGalery" *ngIf="!isWaiting">
+            <app-online-search-item
+                *ngFor="let imageLink of shownImageLinks"
+                [imageLink]="imageLink"
+                [isSelected]="selectedImageLink === imageLink"
+                (click)="imageSelected(imageLink)"
+            ></app-online-search-item>
+        </div>
+        <button
+            class="onlineImageButtons"
+            mat-stroked-button
+            [disabled]="!hasNext || isWaiting"
+            (click)="nextAsked()"
+            matTooltip="Next images"
+            matTooltipShowDelay="500"
+            matTooltipPosition="above"
+        >
+            <mat-icon>east</mat-icon>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div id="buttonsContainer">
+    <app-lateral-bar-button
+        *ngFor="let button of toolButtons"
+        [class]="'tour-' + button.name"
+        [name]="button.name"
+        [imageUrl]="button.imageUrl"
+        (buttonClicked)="toolSelected($event)"
+        [isCurrentlySelected]="button.name === currentTool"
+        [matTooltip]="button.name.charAt(0).toUpperCase() + button.name.slice(1)"
+        matTooltipShowDelay="500"
+        matTooltipPosition="above"
+    ></app-lateral-bar-button>
+    <app-lateral-bar-button
+        class="tour-undo"
+        [name]="undoRedoButtons[0].name"
+        [imageUrl]="undoRedoButtons[0].imageUrl"
+        (buttonClicked)="undo()"
+        [isDisabled]="!undoRedoService.hasUndos()"
+        [matTooltip]="undoRedoButtons[0].name.charAt(0).toUpperCase() + undoRedoButtons[0].name.slice(1)"
+        matTooltipShowDelay="500"
+        matTooltipPosition="above"
+    ></app-lateral-bar-button>
+    <app-lateral-bar-button
+        class="tour-redo"
+        [name]="undoRedoButtons[1].name"
+        [imageUrl]="undoRedoButtons[1].imageUrl"
+        (buttonClicked)="redo()"
+        [isDisabled]="!undoRedoService.hasRedos()"
+        [matTooltip]="undoRedoButtons[1].name.charAt(0).toUpperCase() + undoRedoButtons[1].name.slice(1)"
+        matTooltipShowDelay="500"
+        matTooltipPosition="above"
+    ></app-lateral-bar-button>
+</div>

@@ -1,0 +1,4 @@
+<div *ngIf="isAvatarAssigned" class="avatar" [innerHTML]="avatarSVG | safeHtml"></div>
+<div *ngIf="!isAvatarAssigned" class="avatar">
+    <div class="letter">{{ user.charAt(0) }}</div>
+</div>

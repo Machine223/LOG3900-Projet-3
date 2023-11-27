@@ -1,0 +1,15 @@
+#privateChat {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    align-items: center;
+    justify-items: center;
+    padding: 0px;
+}
+
+#lobbyChannelView {
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,43 @@
+.gameroomPanelInfo {
+    display: grid;
+    grid-template-columns: 10px auto 10px auto 100px;
+    align-items: center;
+}
+mat-panel-title {
+    padding-top: 8px;
+    box-sizing: border-box;
+    width: 100px;
+}
+
+.gameroomContainer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+h3 {
+    padding: 0;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.playerListItem {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 30px auto;
+    grid-template-rows: 30px;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.gameroomListAvatar {
+    height: 30px;
+    width: 30px;
+}
+
+.gameroomPlayerList {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    row-gap: 10px;
+}

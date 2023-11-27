@@ -1,0 +1,18 @@
+<div class="message-wrapper" [ngClass]="{ 'author-margin': isAuthor() }">
+    <div class="message-avatar-unit">
+        <div class="avatar-unit" *ngIf="!isAuthor()">
+            <app-avatar [avatar]="message.author.charAt(0)"></app-avatar>
+            <div class="author">
+                {{ message.author }}
+            </div>
+        </div>
+        <div class="message-unit">
+            <div class="message" [ngClass]="{ 'author-style': isAuthor() }">
+                <div class="message-content">{{ message.content }}</div>
+            </div>
+            <div class="timestamp">
+                {{ timestampToString() }}
+            </div>
+        </div>
+    </div>
+</div>

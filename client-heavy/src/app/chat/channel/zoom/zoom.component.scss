@@ -1,0 +1,28 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+mat-slide-toggle {
+    font-size: larger;
+}
+
+.mat-menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: default;
+
+    app-avatar {
+        width: 42px;
+        height: 42px;
+    }
+
+    h2 {
+        padding-left: 18px;
+        min-width: 150px;
+        font-weight: 400;
+        margin: 0px;
+    }
+}

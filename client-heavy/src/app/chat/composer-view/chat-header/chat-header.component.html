@@ -1,0 +1,47 @@
+<div class="titleNotGameView" [ngClass]="{'titleNotGameViewDetached': isDetached}">
+    <mat-icon
+        matBadge="&#8288;"
+        [matBadgeHidden]="channelManager.unreadChannels.size === 0"
+        matBadgeColor="warn"
+        matBadgeOverlap="true"
+        matBadgeSize="small"
+        (click)="onBack()"
+        id="backComposerButton"
+        class="iconButton"
+        >keyboard_backspace</mat-icon
+    >
+    <h1 id="composerChannelName">{{ channel.name.replace("'s private channel", '') }}</h1>
+    <div *ngIf="!channel.isGameChannel && !isGeneral">
+        <mat-icon
+            class="iconButton"
+            [matMenuTriggerFor]="composerMenu"
+            matTooltip="Options"
+            matTooltipShowDelay="500"
+            matTooltipPosition="below"
+            >more_vert</mat-icon
+        >
+        <mat-menu #composerMenu="matMenu">
+            <button (click)="onLeave()" mat-menu-item>Leave</button>
+            <button (click)="onGetHistory()" mat-menu-item>Get history</button>
+            <button (click)="onDelete()" mat-menu-item>Delete</button>
+        </mat-menu>
+    </div>
+    <mat-icon
+        *ngIf="channel.isGameChannel || isGeneral"
+        (click)="onGetHistory()"
+        class="iconButton"
+        matTooltip="Get history"
+        matTooltipShowDelay="500"
+        matTooltipPosition="below"
+        >history</mat-icon
+    >
+    <mat-icon
+        *ngIf="!isDetached"
+        class="iconButton"
+        (click)="onDetachChat()"
+        matTooltip="Detach chat"
+        matTooltipShowDelay="500"
+        matTooltipPosition="below"
+        >open_in_new</mat-icon
+    >
+</div>

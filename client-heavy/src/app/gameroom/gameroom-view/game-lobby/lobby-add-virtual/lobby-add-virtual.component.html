@@ -1,0 +1,18 @@
+<div id="addVirtualContainer">
+    <div>
+        <button id="addVirtualButton" mat-icon-button [matMenuTriggerFor]="menu" [disabled]="isCompleteForTutorial">
+            <mat-icon id="addVirtualIcon">add</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <div *ngFor="let virtualPlayer of constants.VIRTUAL_PLAYER_NAMES">
+                <button *ngIf="!gameroom.users.has(virtualPlayer)" (click)="addVirtualPlayer.emit(virtualPlayer)" mat-menu-item>
+                    <div class="addVirtualPlayerMenuItem">
+                        <app-avatar class="menuVirtualAvatar" [user]="virtualPlayer"></app-avatar>
+                        <span>{{ virtualPlayer }}</span>
+                    </div>
+                </button>
+            </div>
+        </mat-menu>
+    </div>
+    <div id="addVirtualDetails">Add virtual player</div>
+</div>

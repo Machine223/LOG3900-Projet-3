@@ -1,0 +1,25 @@
+<div
+    id="canvasSelector"
+    (mouseup)="isMainSelectorDragging = false; isSideSelectorDragging = false"
+    (mouseleave)="isMainSelectorDragging = false; isSideSelectorDragging = false"
+    (mouseleave)="isSideSelectorFocused = false; isMainSelectorFocused = false"
+>
+    <canvas
+        #mainColorSelector
+        width="134"
+        height="134"
+        (mousedown)="isMainSelectorDragging = true; isMainSelectorFocused = true"
+        (mousemove)="onMainSelectorMouseMove($event)"
+        (mouseup)="onMainSelectorMouseUp($event)"
+        (mouseleave)="isMainSelectorFocused = false"
+    ></canvas>
+    <canvas
+        #sideColorSelector
+        width="12"
+        height="134"
+        (mousedown)="isSideSelectorDragging = true; isSideSelectorFocused = true"
+        (mousemove)="onSideSelectorMouseMove($event)"
+        (mouseup)="onSideSelectorMouseUp($event)"
+        (mouseleave)="isSideSelectorFocused = false"
+    ></canvas>
+</div>

@@ -1,0 +1,14 @@
+<div class="avatar-picker">
+    <div class="avatar" *ngIf="selectedAvatar" [innerHTML]="selectedAvatar | safeHtml"></div>
+    <div class="avatar" *ngIf="!selectedAvatar">?</div>
+    <button (click)="$event.preventDefault()" mat-stroked-button [matMenuTriggerFor]="menu">Choose Avatar</button>
+    <mat-menu #menu="matMenu">
+        <mat-grid-list cols="4">
+            <mat-grid-tile *ngFor="let avatar of avatars">
+                <button mat-menu-item (click)="onAvatarSelect(avatar.name)">
+                    <div [innerHTML]="avatar.svg | safeHtml"></div>
+                </button>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-menu>
+</div>
