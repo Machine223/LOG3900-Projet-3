@@ -6,7 +6,7 @@ import { SignInComponent } from './profile/sign/sign-in/sign-in.component';
 import { SignUpComponent } from './profile/sign/sign-up/sign-up.component';
 
 const routes: Routes = [
-    { path: '', component: SignInComponent },
+    { path: '', redirectTo: '/main', pathMatch: 'full' },
     { path: 'signin', component: SignInComponent },
     { path: 'signup', component: SignUpComponent },
     { path: 'main', component: ChatViewComponent },
